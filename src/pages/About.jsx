@@ -1,6 +1,6 @@
 import { ArrowRight, Quote, Star, ChevronRight } from 'lucide-react'
 import Seo from '../components/Seo'
-import { SITE_URL, breadcrumb } from '../lib/seo'
+import { ROUTE_SEO } from '../lib/seo'
 import HeroLayered from '../components/HeroLayered'
 import Button from '../components/Button'
 import SectionTitle from '../components/SectionTitle'
@@ -74,24 +74,7 @@ const STYLE_CARDS = [
 export default function About() {
   return (
     <main className="min-h-screen" style={{ backgroundColor: COLORS.black }}>
-      <Seo
-        title="À propos de Barkantedjo — Mohamed Ali, « le béni » de Ngaoundéré"
-        description="L'histoire de Barkantedjo (Mohamed Ali) : de Ngaoundéré aux scènes du Nigeria. Pionnier de l'humour Fulfulde, Digital Marketer, Content Creator et Comedian. Parcours, vision et impact."
-        path="/about"
-        type="profile"
-        jsonLd={[
-          {
-            '@context': 'https://schema.org',
-            '@type': 'ProfilePage',
-            name: 'À propos de Barkantedjo',
-            mainEntity: { '@id': `${SITE_URL}/#person` },
-          },
-          breadcrumb([
-            { name: 'Accueil', path: '/' },
-            { name: 'À Propos', path: '/about' },
-          ]),
-        ]}
-      />
+      <Seo path="/about" {...ROUTE_SEO['/about']} />
 
       {/* ═══════════════════════════════════════════════════════════
           HERO — Style Oprah : "LE BÉNI" géant derrière, portrait centré

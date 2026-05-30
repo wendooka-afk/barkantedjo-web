@@ -1,6 +1,6 @@
 import { Play, ArrowRight, Ticket, Quote, Star } from 'lucide-react'
 import Seo from '../components/Seo'
-import { faqSchema } from '../lib/seo'
+import { ROUTE_SEO } from '../lib/seo'
 import HeroLayered from '../components/HeroLayered'
 import Button from '../components/Button'
 import SectionTitle from '../components/SectionTitle'
@@ -408,31 +408,7 @@ function ContactCTASection() {
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
-      <Seo
-        title="Barkantedjo — Humoriste camerounais, le béni qui fait rire un continent"
-        description="Barkantedjo (Mohamed Ali), humoriste, content creator et digital marketer de Ngaoundéré. Humour Fulfulde, 640 000+ Barkantéens sur TikTok, Facebook et YouTube. Explorer Tour Nigeria 2026."
-        path="/"
-        jsonLd={[
-          faqSchema([
-            {
-              q: 'Qui est Barkantedjo ?',
-              a: "Barkantedjo, de son vrai nom Mohamed Ali, est un humoriste, content creator et digital marketer camerounais né à Ngaoundéré (Adamaoua). Son nom signifie « le béni » en Fulfulde. Il est pionnier de l'humour Fulfulde en format vertical et réunit plus de 640 000 abonnés sur TikTok, Facebook et YouTube.",
-            },
-            {
-              q: 'Que signifie le nom Barkantedjo ?',
-              a: "En Fulfulde, la langue de la culture peule du Sahel, Barkantedjo signifie « le béni » — un ange béni venu des cieux.",
-            },
-            {
-              q: 'Combien Barkantedjo a-t-il d\'abonnés ?',
-              a: 'Plus de 640 000 abonnés au total (« Les Barkantéens ») : environ 332 000 sur TikTok, 292 000 sur Facebook et 17 700 sur YouTube.',
-            },
-            {
-              q: "Qu'est-ce que The Explorer Tour ?",
-              a: "The Explorer Tour est la première tournée internationale de Barkantedjo, qui traverse cinq villes du Nigeria (Yola, Gombe, Kano, Kaduna, Abuja) de juillet à septembre 2026.",
-            },
-          ]),
-        ]}
-      />
+      <Seo path="/" {...ROUTE_SEO['/']} />
       {/* 1. HERO — HeroLayered style Oprah */}
       <HeroLayered
         bgText={HERO.home.bgText}

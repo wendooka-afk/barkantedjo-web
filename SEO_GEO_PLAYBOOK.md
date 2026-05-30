@@ -17,18 +17,21 @@ Domaine : `https://barkantedjo.com`.
 | `llms.txt` + `llms-full.txt` | Fiche entité complète pour les moteurs IA (GEO) |
 | `site.webmanifest`, `_headers` | PWA + en-têtes sécurité/cache |
 | `og-image.jpg` | Image de partage social |
+| **Pré-rendu par route** | Plugin `seoPrerender` dans `vite.config.js` → écrit `dist/<route>/index.html` avec le `<head>` propre à chaque page. **Chaque route a SA meta description / title / canonical / JSON-LD dans le HTML source** (visible sans JS, view-source, crawlers IA). |
 
-**Source unique de vérité du `<head>`** : `index.html` sert de repli statique ; au chargement,
-`main.jsx` retire ces balises et le composant `Seo` reprend la main (aucun doublon).
+**Source de vérité unique** : `src/lib/seo.js` → `ROUTE_SEO` (consommé par le composant `Seo`
+côté client ET par le pré-rendu au build). `index.html` = gabarit (bloc `<!-- SEO:START/END -->`
+régénéré par route). Côté client, `main.jsx` retire les balises statiques et `Seo` reprend la main
+(aucun doublon — vérifié : 1 seule description/canonical par route).
 
 ### ⚠️ À finaliser dans le code
 - [ ] **`public/og-image.jpg`** : actuellement une photo portrait. La remplacer par une vraie carte
   **1200×630 px** (portrait + nom + logo) pour un meilleur rendu des partages.
 - [ ] Confirmer le **téléphone booking** (`Contact.jsx` = placeholder `+237 XXX`) → mettre le vrai numéro.
-- [ ] (Option) **Pré-rendu statique** : un crawler IA sans JS hittant `/explorer-tour` reçoit aujourd'hui
-  l'`index.html` d'accueil (repli correct mais générique). Pour servir le HTML par route, ajouter un
-  pré-rendu : `npm i -D vite-plugin-prerender` ou `react-snap` (postbuild), routes des 6 pages.
-  Non bloquant : Google rend le JS, et `llms.txt` couvre déjà le GEO.
+
+> Note hébergement : le pré-rendu suppose que le host sert le fichier de dossier
+> (`/about` → `/about/index.html`) avant le repli SPA. OK sur Coolify/Nginx (`try_files $uri $uri/ /index.html`),
+> Cloudflare Pages et Netlify. `vite preview` (dev) renvoie toujours l'accueil — c'est normal, pas le comportement prod.
 
 ---
 
