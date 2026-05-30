@@ -1,4 +1,6 @@
 import { Download, ArrowRight, Quote, Star } from 'lucide-react'
+import Seo from '../components/Seo'
+import { breadcrumb } from '../lib/seo'
 import Button from '../components/Button'
 import SectionTitle from '../components/SectionTitle'
 import Reveal from '../components/Reveal'
@@ -238,6 +240,17 @@ function StatCard({ stat, delay }) {
 export default function Partners() {
   return (
     <main className="min-h-screen" style={{ backgroundColor: COLORS.black }}>
+      <Seo
+        title="Partenariats & Brand Ambassador — Barkantedjo"
+        description="Les marques qui font confiance à Barkantedjo : Savana Islamic Finance, Orange Cameroun, Global Gateway, Canal+, TATITECH, Sweet FM. Ambassadeur de marque qui déplace des audiences entières."
+        path="/partenariats"
+        jsonLd={[
+          breadcrumb([
+            { name: 'Accueil', path: '/' },
+            { name: 'Partenariats', path: '/partenariats' },
+          ]),
+        ]}
+      />
 
       {/* ── HERO — style Oprah, "CONFIANCE" géant, portrait Savana ──────── */}
       <HeroLayered

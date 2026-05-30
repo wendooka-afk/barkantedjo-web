@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { ArrowRight, PlayCircle, Flame } from 'lucide-react'
+import Seo from '../components/Seo'
+import { videoListSchema, breadcrumb } from '../lib/seo'
 import HeroLayered from '../components/HeroLayered'
 import VideoCard from '../components/VideoCard'
 import TikTokEmbed from '../components/TikTokEmbed'
@@ -30,6 +32,18 @@ export default function Videos() {
 
   return (
     <main className="min-h-screen" style={{ backgroundColor: COLORS.black }}>
+      <Seo
+        title="Vidéos de Barkantedjo — Sketches Fulfulde, TikTok & YouTube"
+        description="Les vidéos virales de Barkantedjo : sketches en Fulfulde, série Daaaaaani, collabs et moments cultes. Format vertical 9:16 pensé pour TikTok, Shorts et Reels."
+        path="/videos"
+        jsonLd={[
+          videoListSchema(VIDEOS),
+          breadcrumb([
+            { name: 'Accueil', path: '/' },
+            { name: 'Vidéos', path: '/videos' },
+          ]),
+        ]}
+      />
 
       {/* ── 1. HERO LAYERED ── */}
       <HeroLayered

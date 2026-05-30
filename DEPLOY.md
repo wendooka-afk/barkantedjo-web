@@ -32,6 +32,14 @@ location / {
 - Images héros optimisées (PNG détourés compressés).
 - Bundle : ~97 KB JS gz, ~6 KB CSS gz.
 
+## SEO / GEO
+Stack complet en place — voir `SEO_GEO_PLAYBOOK.md`.
+- Meta par page + JSON-LD via `src/components/Seo.jsx` (React 19, sans dépendance).
+- Statiques servis depuis `public/` : `robots.txt`, `sitemap.xml`, `llms.txt`, `llms-full.txt`,
+  `site.webmanifest`, `_headers`, `og-image.jpg`.
+- **Après déploiement** : soumettre `sitemap.xml` à Google Search Console + Bing (étapes dans le playbook).
+- `_headers` (Netlify/Cloudflare) couvre déjà sécurité + cache. Pour Nginx, reporter ces en-têtes.
+
 ## En-têtes recommandés (optionnel, via reverse proxy)
 ```
 X-Content-Type-Options: nosniff

@@ -4,6 +4,8 @@ import Button from '../components/Button'
 import Reveal from '../components/Reveal'
 import HeroLayered from '../components/HeroLayered'
 import { TikTokIcon, YouTubeIcon, FacebookIcon } from '../components/BrandIcons'
+import Seo from '../components/Seo'
+import { SITE_URL, SAME_AS, breadcrumb } from '../lib/seo'
 import { GRADIENT, GRADIENT_SOFT, COLORS, HERO, SOCIALS, BRAND } from '../lib/constants'
 
 const CONTACT_TYPES = ['Booking', 'Partenariat', 'Media', 'Explorer Tour', 'Autre']
@@ -120,6 +122,36 @@ export default function Contact() {
 
   return (
     <main style={{ backgroundColor: COLORS.black, minHeight: '100vh' }}>
+      <Seo
+        title="Contact & Booking — Barkantedjo"
+        description="Booking, partenariat de marque, média, Explorer Tour : contactez Barkantedjo. Réponse garantie sous 48h. Email booking@barkantedjo.com."
+        path="/contact"
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ContactPage',
+            name: 'Contact — Barkantedjo',
+            url: `${SITE_URL}/contact`,
+            mainEntity: {
+              '@type': 'Person',
+              name: BRAND.name,
+              '@id': `${SITE_URL}/#person`,
+              email: 'booking@barkantedjo.com',
+              contactPoint: {
+                '@type': 'ContactPoint',
+                contactType: 'booking',
+                email: 'booking@barkantedjo.com',
+                availableLanguage: ['fr'],
+              },
+              sameAs: SAME_AS,
+            },
+          },
+          breadcrumb([
+            { name: 'Accueil', path: '/' },
+            { name: 'Contact', path: '/contact' },
+          ]),
+        ]}
+      />
 
       {/* ── HERO ── */}
       <HeroLayered

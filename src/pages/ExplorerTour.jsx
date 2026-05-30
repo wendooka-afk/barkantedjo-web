@@ -1,4 +1,6 @@
 import { Ticket, MapPin, Calendar, Users, ArrowRight } from 'lucide-react'
+import Seo from '../components/Seo'
+import { tourEvents, breadcrumb, faqSchema } from '../lib/seo'
 import HeroLayered from '../components/HeroLayered'
 import Button from '../components/Button'
 import SectionTitle from '../components/SectionTitle'
@@ -18,6 +20,28 @@ const INFO_CARDS = [
 export default function ExplorerTour() {
   return (
     <main className="min-h-screen" style={{ backgroundColor: COLORS.black }}>
+      <Seo
+        title="The Explorer Tour 2026 — Barkantedjo en tournée au Nigeria (5 villes)"
+        description="The Explorer Tour : la première tournée internationale de Barkantedjo traverse 5 villes du Nigeria — Yola, Gombe, Kano, Kaduna, Abuja — de juillet à septembre 2026. Dates, lieux et billetterie."
+        path="/explorer-tour"
+        jsonLd={[
+          ...tourEvents(),
+          breadcrumb([
+            { name: 'Accueil', path: '/' },
+            { name: 'Explorer Tour', path: '/explorer-tour' },
+          ]),
+          faqSchema([
+            {
+              q: 'Quelles villes la tournée Explorer Tour de Barkantedjo visite-t-elle ?',
+              a: 'The Explorer Tour 2026 passe par cinq villes du Nigeria : Yola (12 juillet), Gombe (19 juillet), Kano (2 août), Kaduna (16 août) et Abuja (6 septembre 2026).',
+            },
+            {
+              q: 'Quand commence The Explorer Tour ?',
+              a: 'La tournée démarre le 12 juillet 2026 à Yola (Yola City Hall), au Nigeria.',
+            },
+          ]),
+        ]}
+      />
 
       {/* ═══════════════════════════════════════════════════════════
           HERO — style Oprah · "NIGERIA" géant derrière le portrait
