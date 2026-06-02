@@ -14,12 +14,11 @@ import {
   HERO,
   IMAGES,
   STATS,
-  VIDEOS,
-  TOUR_CITIES,
   TOUR_START,
   TESTIMONIALS,
   COLORS,
 } from '../lib/constants'
+import { useTourDates, useVideos } from '../lib/content'
 
 // ─── SECTION 2 · STATS ──────────────────────────────────────────────────────
 function StatsSection() {
@@ -125,6 +124,7 @@ function AboutSection() {
 
 // ─── SECTION 4 · VIDÉOS PREVIEW (verticales 9:16) ───────────────────────────
 function VideosSection() {
+  const { videos } = useVideos()
   return (
     <section
       className="py-20 md:py-28"
@@ -142,7 +142,7 @@ function VideosSection() {
         </Reveal>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mt-14">
-          {VIDEOS.slice(0, 4).map((video, i) => (
+          {videos.slice(0, 4).map((video, i) => (
             <Reveal key={video.id} delay={i * 80}>
               <VideoCard video={video} />
             </Reveal>
@@ -163,6 +163,7 @@ function VideosSection() {
 
 // ─── SECTION 5 · EXPLORER TOUR TEASER ───────────────────────────────────────
 function TourSection() {
+  const tourCities = useTourDates()
   return (
     <section
       className="py-20 md:py-28 relative overflow-hidden"
@@ -212,13 +213,14 @@ function TourSection() {
           {/* Toutes les villes */}
           <Reveal delay={60}>
             <div className="space-y-3">
-              {TOUR_CITIES.map((city, i) => (
+              {tourCities.map((city, i) => (
                 <TourCity
                   key={city.city}
                   city={city.city}
                   country={city.country}
                   date={city.date}
                   venue={city.venue}
+                  ticketUrl={city.ticketUrl}
                   index={i}
                 />
               ))}

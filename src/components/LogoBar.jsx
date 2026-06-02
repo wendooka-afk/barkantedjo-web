@@ -8,16 +8,16 @@ export default function LogoBar({ label = 'Ils lui font confiance' }) {
       className="w-full py-8 overflow-hidden"
       style={{ backgroundColor: '#0A0A0A', borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}
     >
-      <p className="eyebrow text-center mb-6" style={{ color: '#6B6B6B' }}>{label}</p>
+      <p className="eyebrow text-center mb-6" style={{ color: '#8A8A8A' }}>{label}</p>
       <div className="relative">
         <div className="flex w-max animate-marquee gap-12 sm:gap-20">
           {items.map((p, i) => (
             <span
               key={i}
               className="font-heading font-extrabold text-lg sm:text-2xl whitespace-nowrap shrink-0 transition-colors duration-300"
-              style={{ color: '#6B6B6B' }}
+              style={{ color: '#8A8A8A' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#FF6B00')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#6B6B6B')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#8A8A8A')}
             >
               {p.name}
             </span>

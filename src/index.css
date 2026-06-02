@@ -10,7 +10,7 @@
   --color-amber: #FFA033;
   --color-cream: #F5F5F2;
   --color-muted: #B8B8B8;
-  --color-dim: #6B6B6B;
+  --color-dim: #8A8A8A;
 
   --font-display: "Anton", Impact, sans-serif;
   --font-heading: "Archivo", "Montserrat", sans-serif;
@@ -44,6 +44,40 @@
   ::selection {
     background-color: #FF6B00;
     color: #0A0A0A;
+  }
+
+  /* a11y — focus clavier visible (les inputs mettent outline:none en inline) */
+  :focus-visible {
+    outline: 2px solid #FF6B00;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  /* pas d'anneau au clic souris */
+  :focus:not(:focus-visible) { outline: none; }
+
+  /* a11y — lien d'évitement */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 200;
+    background: #FF6B00;
+    color: #0A0A0A;
+    padding: 10px 16px;
+    font-weight: 700;
+    border-radius: 0 0 8px 0;
+  }
+  .skip-link:focus { left: 0; }
+
+  /* a11y — respect du mode mouvement réduit */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+    .reveal { opacity: 1 !important; transform: none !important; }
   }
 
   ::-webkit-scrollbar { width: 8px; }

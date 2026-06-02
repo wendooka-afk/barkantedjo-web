@@ -12,23 +12,23 @@ import { YouTubeIcon, TikTokIcon } from '../components/BrandIcons'
 import {
   HERO,
   SOCIALS,
-  VIDEOS,
   VIDEO_CATEGORIES,
-  FEATURED_VIDEO,
   GRADIENT,
   COLORS,
   BRAND,
 } from '../lib/constants'
+import { useVideos } from '../lib/content'
 
 export default function Videos() {
   const [activeFilter, setActiveFilter] = useState('Tous')
+  const { videos, featured } = useVideos()
 
   const filtered =
     activeFilter === 'Tous'
-      ? VIDEOS
+      ? videos
       : activeFilter === 'TikTok' || activeFilter === 'YouTube'
-      ? VIDEOS.filter((v) => v.platform.toLowerCase() === activeFilter.toLowerCase())
-      : VIDEOS.filter((v) => v.category === activeFilter)
+      ? videos.filter((v) => v.platform.toLowerCase() === activeFilter.toLowerCase())
+      : videos.filter((v) => v.category === activeFilter)
 
   return (
     <main className="min-h-screen" style={{ backgroundColor: COLORS.black }}>
@@ -80,12 +80,12 @@ export default function Videos() {
                   La vidéo qui{' '}
                   <span className="text-gradient">enflamme</span>
                 </h2>
-                <span className="eyebrow text-xs">{FEATURED_VIDEO.category}</span>
+                <span className="eyebrow text-xs">{featured.category}</span>
                 <h3
                   className="font-heading font-extrabold text-lg sm:text-xl mt-2 leading-snug"
                   style={{ color: COLORS.white }}
                 >
-                  {FEATURED_VIDEO.title}
+                  {featured.title}
                 </h3>
                 <p className="font-body text-base leading-relaxed mt-4 mb-8" style={{ color: COLORS.textMuted }}>
                   Le béni en pleine forme. Ce sketch a fait trembler tout le TikTok camerounais — et au-delà.{' '}
@@ -95,7 +95,7 @@ export default function Videos() {
                   <Button
                     variant="primary"
                     size="md"
-                    href={FEATURED_VIDEO.url}
+                    href={featured.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     icon={Flame}
@@ -122,7 +122,7 @@ export default function Videos() {
                 className="card-surface rounded-2xl p-5 sm:p-6 flex justify-center"
                 style={{ boxShadow: '0 20px 60px rgba(255,107,0,0.12)' }}
               >
-                <TikTokEmbed videoId={FEATURED_VIDEO.id} url={FEATURED_VIDEO.url} />
+                <TikTokEmbed videoId={featured.id} url={featured.url} />
               </div>
             </Reveal>
 

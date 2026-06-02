@@ -16,7 +16,7 @@ export const COLORS = {
   amber: '#FFA033',
   white: '#FFFFFF',
   textMuted: '#B8B8B8',
-  textDim: '#6B6B6B',
+  textDim: '#8A8A8A', // remonté pour contraste WCAG AA
   light: '#F5F5F2',
   lightCard: '#FFFFFF',
 }

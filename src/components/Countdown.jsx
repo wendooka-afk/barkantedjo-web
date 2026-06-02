@@ -28,7 +28,7 @@ export default function Countdown({ target, dark = false }) {
   ]
 
   const numColor = dark ? '#0A0A0A' : '#FFFFFF'
-  const labelColor = dark ? '#6B6B6B' : '#6B6B6B'
+  const labelColor = '#8A8A8A'
 
   return (
     <div className="flex items-stretch gap-3 sm:gap-5">

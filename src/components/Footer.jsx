@@ -76,7 +76,7 @@ export default function Footer() {
 
           {/* Nav */}
           <div className="md:col-span-3">
-            <h4 className="font-heading font-bold uppercase tracking-widest text-xs mb-5" style={{ color: '#6B6B6B' }}>
+            <h4 className="font-heading font-bold uppercase tracking-widest text-xs mb-5" style={{ color: '#8A8A8A' }}>
               Navigation
             </h4>
             <ul className="space-y-3">
@@ -98,7 +98,7 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div className="md:col-span-4">
-            <h4 className="font-heading font-bold uppercase tracking-widest text-xs mb-5" style={{ color: '#6B6B6B' }}>
+            <h4 className="font-heading font-bold uppercase tracking-widest text-xs mb-5" style={{ color: '#8A8A8A' }}>
               Rejoins les Barkantéens
             </h4>
             <p className="text-sm mb-4" style={{ color: '#B8B8B8' }}>
@@ -149,7 +149,7 @@ export default function Footer() {
         <div className="divider-fire my-10 opacity-40" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs" style={{ color: '#6B6B6B' }}>
+          <p className="text-xs" style={{ color: '#8A8A8A' }}>
             © 2026 Barkantedjo. Tous droits réservés.
           </p>
           <p className="text-xs font-body" style={{ color: '#B8B8B8' }}>

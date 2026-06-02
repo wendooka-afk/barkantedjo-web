@@ -7,7 +7,8 @@ import SectionTitle from '../components/SectionTitle'
 import Reveal from '../components/Reveal'
 import Countdown from '../components/Countdown'
 import TourCity from '../components/TourCity'
-import { TOUR_CITIES, TOUR_START, IMAGES, HERO, COLORS, GRADIENT } from '../lib/constants'
+import { TOUR_START, IMAGES, HERO, COLORS, GRADIENT } from '../lib/constants'
+import { useTourDates } from '../lib/content'
 
 // ─── Info mini-cards data ────────────────────────────────────────────
 const INFO_CARDS = [
@@ -18,6 +19,7 @@ const INFO_CARDS = [
 ]
 
 export default function ExplorerTour() {
+  const tourCities = useTourDates()
   return (
     <main className="min-h-screen" style={{ backgroundColor: COLORS.black }}>
       <Seo path="/explorer-tour" {...ROUTE_SEO['/explorer-tour']} />
@@ -161,13 +163,14 @@ export default function ExplorerTour() {
 
           {/* Tour cities list */}
           <div className="flex flex-col gap-4">
-            {TOUR_CITIES.map((cityData, i) => (
+            {tourCities.map((cityData, i) => (
               <Reveal key={cityData.city} delay={i * 80}>
                 <TourCity
                   city={cityData.city}
                   country={cityData.country}
                   date={cityData.date}
                   venue={cityData.venue}
+                  ticketUrl={cityData.ticketUrl}
                   index={i}
                 />
               </Reveal>

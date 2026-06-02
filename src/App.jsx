@@ -8,6 +8,9 @@ import Videos from './pages/Videos'
 import ExplorerTour from './pages/ExplorerTour'
 import Partners from './pages/Partners'
 import Contact from './pages/Contact'
+import NotFound from './pages/NotFound'
+import ErrorBoundary from './components/ErrorBoundary'
+import Analytics from './components/Analytics'
 
 // Dashboard admin : chunk lazy (n'alourdit pas le site public)
 const AdminApp = lazy(() => import('./pages/admin/AdminApp'))
@@ -24,8 +27,11 @@ function ScrollToTop() {
 function PublicLayout() {
   return (
     <>
+      <a href="#main" className="skip-link">Aller au contenu</a>
       <Navbar />
-      <Outlet />
+      <div id="main">
+        <Outlet />
+      </div>
       <Footer />
     </>
   )
@@ -33,29 +39,33 @@ function PublicLayout() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        {/* Site public */}
-        <Route element={<PublicLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/videos" element={<Videos />} />
-          <Route path="/explorer-tour" element={<ExplorerTour />} />
-          <Route path="/partenariats" element={<Partners />} />
-          <Route path="/contact" element={<Contact />} />
-        </Route>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Analytics />
+        <Routes>
+          {/* Site public */}
+          <Route element={<PublicLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/videos" element={<Videos />} />
+            <Route path="/explorer-tour" element={<ExplorerTour />} />
+            <Route path="/partenariats" element={<Partners />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
 
-        {/* Dashboard admin (lazy) */}
-        <Route
-          path="/admin/*"
-          element={
-            <Suspense fallback={<div style={{ minHeight: '100vh', background: '#0A0A0A' }} />}>
-              <AdminApp />
-            </Suspense>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+          {/* Dashboard admin (lazy) */}
+          <Route
+            path="/admin/*"
+            element={
+              <Suspense fallback={<div style={{ minHeight: '100vh', background: '#0A0A0A' }} />}>
+                <AdminApp />
+              </Suspense>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </ErrorBoundary>
   )
 }
