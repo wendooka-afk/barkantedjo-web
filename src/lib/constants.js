@@ -49,20 +49,21 @@ export const SOCIALS = {
   facebook: 'https://www.facebook.com/barkantedjo',
 }
 
+// Images optimisées WebP (générées par `npm run optimize:images`, -61% de poids)
 export const IMAGES = {
-  heroPortrait: '/621253415_18097279492924718_3691284739478424428_n.jpg',
-  aboutPortrait: '/691583760_1632161675410693_977315285687019278_n.jpg',
-  aboutPortrait2: '/504242303_1330506035576260_2553521985165676926_n.jpg',
-  explorerTourPoster: '/702335791_1638591624767698_4256854148893593688_n.jpg',
-  savanaAmbassador: '/494436155_1299386162021581_6417945347941286688_n.jpg',
-  savanaSignature: '/489620915_1278824757411055_8825267190285617854_n.jpg',
-  savanaMekka: '/624819192_18097830625924718_8563925762396941071_n.jpg',
-  orangeEvent: '/502710711_18073628245924718_801480654107278068_n.jpg',
-  // Portraits détourés (fond transparent) pour les héros
-  homeHero: '/Barkantedjo%20home%20hero.png',
-  heroCutout: '/hero_cutout.png',
-  aboutCutout: '/about_cutout.png',
-  savanaCutout: '/savana_cutout.png',
+  heroPortrait: '/hero-portrait.webp',
+  aboutPortrait: '/about-portrait.webp',
+  aboutPortrait2: '/about-portrait-2.webp',
+  explorerTourPoster: '/explorer-poster.webp',
+  savanaAmbassador: '/savana-ambassador.webp',
+  savanaSignature: '/savana-signature.webp',
+  savanaMekka: '/savana-mekka.webp',
+  orangeEvent: '/orange-event.webp',
+  // Portraits détourés (fond transparent, alpha WebP) pour les héros
+  homeHero: '/home-hero.webp',
+  heroCutout: '/hero-cutout.webp',
+  aboutCutout: '/about-cutout.webp',
+  savanaCutout: '/savana-cutout.webp',
 }
 
 // "Featured in" logo bar (Oprah-style)

@@ -55,6 +55,8 @@ export default function ExplorerTour() {
                 <img
                   src={IMAGES.explorerTourPoster}
                   alt="The Explorer Tour — Nigeria 2026"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain block"
                 />
               </div>

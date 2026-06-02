@@ -43,6 +43,26 @@ Le dashboard `/admin` et les formulaires (Contact, newsletter) utilisent Supabas
 - `/admin` est `Disallow` dans robots.txt + `noindex`.
 - Détails & axes d'amélioration : `AUDIT_AMELIORATIONS.md`.
 
+## Resend — emails de notification des leads
+À chaque nouvelle demande Contact, un trigger Postgres (`bk_leads_notify`) envoie un email à
+`booking@barkantedjo.com` via Resend. **Inactif tant que la clé n'est pas posée** (n'altère pas l'insert).
+
+Activation (une fois) :
+1. Créer un compte sur [resend.com], récupérer une clé API (`re_...`).
+2. (Recommandé) Vérifier le domaine `barkantedjo.com` chez Resend (DNS) pour un `from` pro et la
+   délivrabilité. Sans domaine, Resend n'envoie qu'à l'adresse du compte (mode test).
+3. Poser les secrets dans Supabase (SQL editor du projet `ywwhzvsqfumzubqehbmf`) :
+```sql
+select vault.create_secret('re_VOTRE_CLE', 'RESEND_API_KEY');
+-- après vérif du domaine :
+select vault.create_secret('Barkantedjo <booking@barkantedjo.com>', 'RESEND_FROM');
+```
+4. Tester : envoyer une demande via /contact → l'email doit arriver.
+
+## Images
+WebP générés via `npm run optimize:images` (sharp, dev-dep). Relancer après ajout d'images, puis
+mettre à jour `src/lib/constants.js` (`IMAGES`).
+
 ## SEO / GEO
 Stack complet en place — voir `SEO_GEO_PLAYBOOK.md`.
 - Meta par page + JSON-LD via `src/components/Seo.jsx` (React 19, sans dépendance).

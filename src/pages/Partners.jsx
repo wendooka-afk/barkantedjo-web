@@ -98,6 +98,8 @@ function PartnerCard({ partner, delay }) {
             <img
               src={partner.photo}
               alt={partner.name}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
             />
           </div>
@@ -163,6 +165,8 @@ function TestimonialCard({ testimonial, delay }) {
         <img
           src={testimonial.image}
           alt={testimonial.org}
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
 

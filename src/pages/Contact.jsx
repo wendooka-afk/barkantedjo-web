@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Send, Mail, Clock, CheckCircle, ArrowRight } from 'lucide-react'
 import Button from '../components/Button'
 import Reveal from '../components/Reveal'
@@ -99,6 +99,8 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const hpRef = useRef('') // honeypot
+  const mountRef = useRef(Date.now())
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -107,6 +109,11 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
+    // Anti-spam : honeypot rempli ou envoi < 2,5 s = bot → faux succès, pas d'insert
+    if (hpRef.current || Date.now() - mountRef.current < 2500) {
+      setSubmitted(true)
+      return
+    }
     setLoading(true)
     try {
       const { supabase, hasSupabase } = await import('../lib/supabase')
@@ -464,6 +471,16 @@ export default function Contact() {
                   className="card-surface rounded-2xl"
                   style={{ padding: '32px' }}
                 >
+                  {/* Honeypot anti-spam — invisible aux humains */}
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    onChange={(e) => (hpRef.current = e.target.value)}
+                    style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+                  />
                   {/* Intro copy */}
                   <p
                     style={{

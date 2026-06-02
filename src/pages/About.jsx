@@ -160,6 +160,8 @@ export default function About() {
                   <img
                     src={IMAGES.aboutPortrait}
                     alt="Barkantedjo — portrait"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover object-top"
                   />
                   <div
@@ -209,6 +211,8 @@ export default function About() {
                   <img
                     src={IMAGES.aboutPortrait2}
                     alt="Barkantedjo — début"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>

@@ -72,6 +72,8 @@ function AboutSection() {
               <img
                 src={IMAGES.aboutPortrait}
                 alt="Barkantedjo portrait"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
                 style={{ objectPosition: 'center 15%' }}
               />
@@ -200,6 +202,8 @@ function TourSection() {
               <img
                 src={IMAGES.explorerTourPoster}
                 alt="Explorer Tour Nigeria 2026"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto object-cover block"
               />
             </div>
@@ -269,6 +273,8 @@ function TestimonialsSection() {
                 <img
                   src={t.image}
                   alt={t.org}
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 

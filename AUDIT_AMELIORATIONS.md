@@ -111,13 +111,20 @@ Google Search Console + Bing, créer Wikidata, harmoniser les bios réseaux → 
 
 ## 8. Proposition d'améliorations (priorisée)
 
-### 🔴 P0 — cette semaine (revenus & pertes)
-1. **Notification email des leads** : Edge Function Supabase (trigger `bk_leads` insert) → Resend/Brevo
-   → email à booking@barkantedjo.com. Ne jamais rater un booking.
-2. **Variables d'env sur Coolify** (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`) + **changer le mot de
+### 🔴 P0 — ✅ FAIT (cette session)
+1. ✅ **Notification email des leads** : trigger Postgres `bk_leads_notify` → `pg_net` → API Resend
+   → email à booking@barkantedjo.com (clé lue dans Vault). Le trigger ne bloque jamais l'insert ;
+   no-op tant que la clé n'est pas définie. **Activation (1 étape) :** voir `DEPLOY.md` §Resend.
+2. ✅ **Optimisation images** : WebP (`npm run optimize:images`, **−61 %** : 3,9 Mo → 1,5 Mo) +
+   `loading="lazy"` + `decoding="async"` sur les images sous la ligne de flottaison.
+3. ✅ **Anti-spam** : honeypot + rejet si envoi < 2,5 s (Contact + newsletter), zéro config.
+
+### 🔴 P0 — reste à faire par toi (hors code)
+4. **Variables d'env sur Coolify** (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`) + **changer le mot de
    passe admin**.
-3. **Optimisation images** (WebP + lazy + dimensions) → perf mobile & SEO.
-4. **Anti-spam formulaires** (Turnstile + honeypot).
+5. **Activer Resend** (clé + domaine) pour que les emails de lead partent — `DEPLOY.md` §Resend.
+6. (Option) **Turnstile/hCaptcha** : durcir l'anti-spam au-delà du honeypot (nécessite une vérif serveur,
+   ex. via Edge Function de soumission). Le honeypot couvre déjà la majorité des bots.
 
 ### 🟠 P1 — 2–3 semaines (croissance)
 5. **Site public piloté par la base** : lire `bk_tour_dates`/`bk_videos` depuis Supabase + déclencher

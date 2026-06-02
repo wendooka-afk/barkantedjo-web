@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { YouTubeIcon, TikTokIcon, FacebookIcon } from './BrandIcons'
@@ -7,11 +7,19 @@ import { NAV_LINKS, SOCIALS } from '../lib/constants'
 export default function Footer() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState('idle') // idle | loading | ok | err
+  const hpRef = useRef('') // honeypot
+  const mountRef = useRef(Date.now())
 
   const subscribe = async (e) => {
     e.preventDefault()
     const value = email.trim()
     if (!value || status === 'loading') return
+    // Anti-spam : honeypot ou envoi trop rapide = bot → faux succès
+    if (hpRef.current || Date.now() - mountRef.current < 2500) {
+      setStatus('ok')
+      setEmail('')
+      return
+    }
     setStatus('loading')
     try {
       const { supabase, hasSupabase } = await import('../lib/supabase')
@@ -97,6 +105,15 @@ export default function Footer() {
               Dates, vidéos, coulisses. Direct dans ta boîte mail.
             </p>
             <form onSubmit={subscribe} className="flex gap-2">
+              <input
+                type="text"
+                name="company"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                onChange={(e) => (hpRef.current = e.target.value)}
+                style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+              />
               <input
                 type="email"
                 required
