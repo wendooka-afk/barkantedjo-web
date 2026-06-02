@@ -6,6 +6,27 @@ import { NAV_LINKS, SOCIALS } from '../lib/constants'
 
 export default function Footer() {
   const [email, setEmail] = useState('')
+  const [status, setStatus] = useState('idle') // idle | loading | ok | err
+
+  const subscribe = async (e) => {
+    e.preventDefault()
+    const value = email.trim()
+    if (!value || status === 'loading') return
+    setStatus('loading')
+    try {
+      const { supabase, hasSupabase } = await import('../lib/supabase')
+      if (!hasSupabase) throw new Error('config')
+      const { error } = await supabase
+        .from('bk_newsletter')
+        .insert({ email: value, source: 'footer' })
+      // 23505 = email déjà inscrit → on considère ça comme un succès
+      if (error && error.code !== '23505') throw error
+      setStatus('ok')
+      setEmail('')
+    } catch {
+      setStatus('err')
+    }
+  }
 
   return (
     <footer style={{ backgroundColor: '#0A0A0A', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
@@ -75,9 +96,10 @@ export default function Footer() {
             <p className="text-sm mb-4" style={{ color: '#B8B8B8' }}>
               Dates, vidéos, coulisses. Direct dans ta boîte mail.
             </p>
-            <form onSubmit={(e) => e.preventDefault()} className="flex gap-2">
+            <form onSubmit={subscribe} className="flex gap-2">
               <input
                 type="email"
+                required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="ton@email.com"
@@ -86,13 +108,24 @@ export default function Footer() {
               />
               <button
                 type="submit"
+                disabled={status === 'loading'}
                 aria-label="S'abonner"
                 className="px-4 rounded-lg bg-gradient-fire flex items-center justify-center transition-transform duration-200 hover:scale-105"
-                style={{ color: '#0A0A0A' }}
+                style={{ color: '#0A0A0A', opacity: status === 'loading' ? 0.6 : 1 }}
               >
                 <ArrowRight size={20} />
               </button>
             </form>
+            {status === 'ok' && (
+              <p className="text-xs mt-2" style={{ color: '#FF6B00' }} role="status">
+                Bienvenue chez les Barkantéens ! 🎉
+              </p>
+            )}
+            {status === 'err' && (
+              <p className="text-xs mt-2" style={{ color: '#FF6B6B' }} role="alert">
+                Erreur. Réessaie dans un instant.
+              </p>
+            )}
           </div>
         </div>
 

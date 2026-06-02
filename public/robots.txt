@@ -1,7 +1,8 @@
 # Barkantedjo — robots.txt
-# Moteurs de recherche : accès complet
+# Moteurs de recherche : accès complet (sauf admin)
 User-agent: *
 Allow: /
+Disallow: /admin
 
 # ── Crawlers IA / GEO (autorisés explicitement) ──
 User-agent: GPTBot

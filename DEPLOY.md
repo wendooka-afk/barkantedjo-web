@@ -32,6 +32,17 @@ location / {
 - Images héros optimisées (PNG détourés compressés).
 - Bundle : ~97 KB JS gz, ~6 KB CSS gz.
 
+## Backend / Dashboard (Supabase)
+Le dashboard `/admin` et les formulaires (Contact, newsletter) utilisent Supabase.
+- **Variables d'env REQUISES au build** (sinon formulaires + admin inactifs ; `.env` est gitignoré) :
+  - `VITE_SUPABASE_URL=https://ywwhzvsqfumzubqehbmf.supabase.co`
+  - `VITE_SUPABASE_ANON_KEY=sb_publishable_...` (clé publishable, sûre côté client — RLS protège)
+  - Sur **Coolify** : Settings → Environment Variables (build-time).
+- Projet Supabase : « Wendooka Digital », tables préfixées `bk_`. RLS active.
+- Accès admin : `/admin/login` (email dans l'allowlist `bk_admins`). **Changer le mot de passe temporaire.**
+- `/admin` est `Disallow` dans robots.txt + `noindex`.
+- Détails & axes d'amélioration : `AUDIT_AMELIORATIONS.md`.
+
 ## SEO / GEO
 Stack complet en place — voir `SEO_GEO_PLAYBOOK.md`.
 - Meta par page + JSON-LD via `src/components/Seo.jsx` (React 19, sans dépendance).

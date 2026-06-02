@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Send, Mail, Phone, Clock, CheckCircle, ArrowRight } from 'lucide-react'
+import { Send, Mail, Clock, CheckCircle, ArrowRight } from 'lucide-react'
 import Button from '../components/Button'
 import Reveal from '../components/Reveal'
 import HeroLayered from '../components/HeroLayered'
@@ -16,12 +16,6 @@ const INFO_CARDS = [
     label: 'Email booking',
     value: 'booking@barkantedjo.com',
     href: 'mailto:booking@barkantedjo.com',
-  },
-  {
-    icon: Phone,
-    label: 'Téléphone',
-    value: '+237 XXX XXX XXX',
-    href: 'tel:+237XXXXXXXXX',
   },
   {
     icon: Clock,
@@ -104,6 +98,7 @@ export default function Contact() {
   })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -111,10 +106,28 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setError('')
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 1200))
-    setLoading(false)
-    setSubmitted(true)
+    try {
+      const { supabase, hasSupabase } = await import('../lib/supabase')
+      if (!hasSupabase) throw new Error('config')
+      const { error: dbError } = await supabase.from('bk_leads').insert({
+        nom: form.nom.trim(),
+        email: form.email.trim(),
+        telephone: form.telephone.trim() || null,
+        type: form.type || null,
+        budget: form.budget.trim() || null,
+        message: form.message.trim(),
+      })
+      if (dbError) throw dbError
+      setSubmitted(true)
+    } catch (err) {
+      setError(
+        "Une erreur est survenue à l'envoi. Réessaie ou écris à booking@barkantedjo.com.",
+      )
+    } finally {
+      setLoading(false)
+    }
   }
 
   const focusBorder = (e) => (e.target.style.borderColor = COLORS.orange)
@@ -582,6 +595,21 @@ export default function Contact() {
                       />
                     </Field>
                   </div>
+
+                  {/* Erreur */}
+                  {error && (
+                    <p
+                      role="alert"
+                      style={{
+                        color: '#FF6B6B',
+                        fontSize: '13px',
+                        marginBottom: '14px',
+                        fontFamily: '"Inter", sans-serif',
+                      }}
+                    >
+                      {error}
+                    </p>
+                  )}
 
                   {/* Submit */}
                   <Button
