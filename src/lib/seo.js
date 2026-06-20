@@ -190,9 +190,9 @@ export function faqSchema(qa) {
 // ─────────────────────────────────────────────────────────────
 export const ROUTE_SEO = {
   '/': {
-    title: 'Barkantedjo — Humoriste Fulfulde & influenceur camerounais, le béni',
+    title: "Barkantedjo — L'humoriste qui fait rire et découvrir le continent",
     description:
-      "Barkantedjo (Mohamad Ali) : humoriste Fulfulde, influenceur et créateur de contenu camerounais de Ngaoundéré. L'humoriste du Grand Nord, 640 000+ Barkantéens sur TikTok, Facebook et YouTube. Explorer Tour Nigeria 2026.",
+      "Envoyé pour soigner les maux de la société par le rire. De Ngaoundéré aux scènes internationales, l'humour Fulfulde porté partout où il peut toucher un cœur.",
     type: 'website',
     jsonLd: [
       faqSchema([

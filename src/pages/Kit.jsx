@@ -317,7 +317,7 @@ export default function Kit() {
           <Reveal>
             <SectionTitle
               eyebrow="Travaillons ensemble"
-              title={<>Lance ton projet avec{' '}<span className="text-gradient">le béni</span></>}
+              title={<>Lance ton projet<br /><span className="text-gradient">avec le béni</span></>}
               subtitle="Choisis les services qui t'intéressent, présente ta structure — l'équipe te répond sous 48h ouvrées."
               align="center"
             />
