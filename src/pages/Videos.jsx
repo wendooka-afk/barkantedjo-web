@@ -120,7 +120,7 @@ export default function Videos() {
             <Reveal delay={120}>
               <div
                 className="card-surface rounded-2xl p-5 sm:p-6 flex justify-center"
-                style={{ boxShadow: '0 20px 60px rgba(255,107,0,0.12)' }}
+                style={{ boxShadow: '0 20px 60px rgba(180,231,1,0.12)' }}
               >
                 <TikTokEmbed videoId={featured.id} url={featured.url} />
               </div>
@@ -162,7 +162,7 @@ export default function Videos() {
                             background: GRADIENT,
                             color: '#0A0A0A',
                             border: 'none',
-                            boxShadow: '0 6px 20px rgba(255,107,0,0.35)',
+                            boxShadow: '0 6px 20px rgba(180,231,1,0.35)',
                           }
                         : {
                             background: 'transparent',

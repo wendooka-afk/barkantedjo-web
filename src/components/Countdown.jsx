@@ -51,7 +51,7 @@ export default function Countdown({ target, dark = false }) {
           {i < units.length - 1 && (
             <span
               className="font-display text-3xl sm:text-5xl leading-none self-start"
-              style={{ color: '#FF6B00' }}
+              style={{ color: '#B4E701' }}
             >
               :
             </span>

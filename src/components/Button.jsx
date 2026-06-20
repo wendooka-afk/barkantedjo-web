@@ -33,7 +33,7 @@ export default function Button({
     variant === 'outline'
       ? { border: '1.5px solid rgba(255,255,255,0.25)' }
       : variant === 'primary'
-      ? { boxShadow: '0 10px 30px rgba(255,107,0,0.25)' }
+      ? { boxShadow: '0 10px 30px rgba(180,231,1,0.25)' }
       : {}
 
   const cls = `${base} ${sizes[size]} ${variants[variant]} ${className}`

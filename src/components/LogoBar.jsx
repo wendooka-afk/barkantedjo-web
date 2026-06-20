@@ -16,7 +16,7 @@ export default function LogoBar({ label = 'Ils lui font confiance' }) {
               key={i}
               className="font-heading font-extrabold text-lg sm:text-2xl whitespace-nowrap shrink-0 transition-colors duration-300"
               style={{ color: '#8A8A8A' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#FF6B00')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#B4E701')}
               onMouseLeave={(e) => (e.currentTarget.style.color = '#8A8A8A')}
             >
               {p.name}

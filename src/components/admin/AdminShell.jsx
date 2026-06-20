@@ -15,7 +15,7 @@ const C = {
   panel: '#161616',
   card: '#1C1C1C',
   border: 'rgba(255,255,255,0.08)',
-  orange: '#FF6B00',
+  orange: '#B4E701',
   white: '#FFFFFF',
   muted: '#B8B8B8',
   dim: '#6B6B6B',
@@ -82,8 +82,8 @@ export default function AdminShell() {
                 fontSize: 14,
                 textDecoration: 'none',
                 color: isActive ? C.white : C.muted,
-                background: isActive ? 'rgba(255,107,0,0.12)' : 'transparent',
-                border: isActive ? '1px solid rgba(255,107,0,0.3)' : '1px solid transparent',
+                background: isActive ? 'rgba(180,231,1,0.12)' : 'transparent',
+                border: isActive ? '1px solid rgba(180,231,1,0.3)' : '1px solid transparent',
               })}
             >
               <Icon size={17} />

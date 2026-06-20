@@ -43,7 +43,7 @@ export default function Login() {
 
         {error && <p style={{ color: '#FF6B6B', fontSize: 13, margin: '4px 0 12px' }}>{error}</p>}
 
-        <button type="submit" disabled={loading || !available} style={{ width: '100%', background: 'linear-gradient(135deg,#FF6B00,#E02424)', color: '#0A0A0A', fontWeight: 700, border: 'none', padding: '12px', borderRadius: 8, cursor: 'pointer', marginTop: 8, opacity: loading ? 0.7 : 1 }}>
+        <button type="submit" disabled={loading || !available} style={{ width: '100%', background: 'linear-gradient(135deg,#B4E701,#056a2b)', color: '#0A0A0A', fontWeight: 700, border: 'none', padding: '12px', borderRadius: 8, cursor: 'pointer', marginTop: 8, opacity: loading ? 0.7 : 1 }}>
           {loading ? 'Connexion…' : 'Se connecter'}
         </button>
       </form>

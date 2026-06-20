@@ -91,8 +91,8 @@ function AboutSection() {
             <Reveal delay={80}>
               <SectionTitle
                 eyebrow="À Propos"
-                title={<>Le béni,{' '}<br /><span className="text-gradient">c'est lui.</span></>}
-                subtitle="Mohamed Ali — né à Ngaoundéré, élevé par la culture Peule. Barkantedjo ne signifie pas seulement un nom. Ça signifie une mission."
+                title={<>Le béni,{' '}<span className="text-gradient">c'est lui.</span></>}
+                subtitle="Mohamad Ali — né à Ngaoundéré, élevé par la culture Peule. Barkantedjo ne signifie pas seulement un nom. Ça signifie une mission."
                 align="left"
               />
             </Reveal>
@@ -104,7 +104,7 @@ function AboutSection() {
               >
                 En 2020, il prend son téléphone. En 2024, des millions le regardent.
                 Pas des abonnés — des Barkantéens. Une communauté qui rit, partage et se reconnaît.
-                Ambassadeur Canal+, Orange, Savana. Sur scène à Douala, Lagos, Yola.
+                Ambassadeur Canal+, Orange, Savana. Sur scène à Douala, Yola.
                 L'humour Fulfulde n'avait jamais voyagé aussi loin.
               </p>
             </Reveal>
@@ -134,7 +134,7 @@ function VideosSection() {
         <Reveal>
           <SectionTitle
             eyebrow="Format Vertical · 9:16"
-            title={<>Pensé pour<br /><span style={{ color: COLORS.orange }}>ton écran</span></>}
+            title={<>Pensé pour<br /><span className="text-gradient">ton écran</span></>}
             subtitle="Sketches Fulfulde, collabs, moments cultes. Tout en vertical — comme TikTok, Shorts et Reels le demandent."
             align="center"
             dark
@@ -174,7 +174,7 @@ function TourSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(255,107,0,0.07) 0%, transparent 70%)',
+            'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(180,231,1,0.07) 0%, transparent 70%)',
         }}
       />
 
@@ -197,7 +197,7 @@ function TourSection() {
               className="rounded-2xl overflow-hidden max-w-[300px] w-full mx-auto"
               style={{
                 border: '1px solid rgba(255,255,255,0.08)',
-                boxShadow: '0 20px 60px rgba(255,107,0,0.12)',
+                boxShadow: '0 20px 60px rgba(180,231,1,0.12)',
               }}
             >
               <img
@@ -232,7 +232,7 @@ function TourSection() {
         <Reveal delay={120}>
           <div className="mt-14 flex flex-col items-center gap-8">
             <div className="text-center">
-              <p className="eyebrow mb-4">Première à Yola — 12 Juillet 2026</p>
+              <p className="eyebrow mb-4">Première à Yola — 30 Septembre 2026</p>
               <Countdown target={TOUR_START} dark={false} />
             </div>
             <Button variant="primary" size="lg" to="/explorer-tour" icon={Ticket} iconRight={false}>
@@ -358,7 +358,7 @@ function ContactCTASection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(255,107,0,0.06) 0%, transparent 70%)',
+            'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(180,231,1,0.06) 0%, transparent 70%)',
         }}
       />
 

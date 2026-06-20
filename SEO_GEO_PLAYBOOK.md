@@ -11,7 +11,7 @@ Domaine : `https://barkantedjo.com`.
 |---|---|
 | Meta par page | `<title>`, `description`, `canonical`, OG, Twitter — uniques sur les 6 pages (composant `src/components/Seo.jsx`, React 19 head natif) |
 | Repli sans JS | `index.html` contient meta + JSON-LD + `<noscript>` (les crawlers IA sans JS voient le contenu) |
-| Données structurées | `Person` (Mohamed Ali), `WebSite`, `Organization`, `ProfilePage`, `Event` ×5 (tournée), `VideoObject`, `BreadcrumbList`, `FAQPage`, `ContactPage` |
+| Données structurées | `Person` (Mohamad Ali), `WebSite`, `Organization`, `ProfilePage`, `Event` ×5 (tournée), `VideoObject`, `BreadcrumbList`, `FAQPage`, `ContactPage` |
 | `robots.txt` | Autorise explicitement GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot, etc. |
 | `sitemap.xml` | 6 URLs |
 | `llms.txt` + `llms-full.txt` | Fiche entité complète pour les moteurs IA (GEO) |
@@ -45,8 +45,8 @@ régénéré par route). Côté client, `main.jsx` retire les balises statiques 
 
 ### 2. Entité & citations (le levier GEO n°1)
 Les IA citent les entités **cohérentes et corroborées sur plusieurs sources**. Faire correspondre
-partout le même bloc : *Barkantedjo / Mohamed Ali / humoriste camerounais / Ngaoundéré / lien site*.
-- [ ] **Wikidata** : créer un élément « Barkantedjo (Mohamed Ali) », occupation = humoriste, pays =
+partout le même bloc : *Barkantedjo / Mohamad Ali / humoriste camerounais / Ngaoundéré / lien site*.
+- [ ] **Wikidata** : créer un élément « Barkantedjo (Mohamad Ali) », occupation = humoriste, pays =
   Cameroun, comptes TikTok/YouTube/Facebook, site officiel. (Gratuit, très lu par les IA.)
 - [ ] **Google Knowledge Panel** : revendiquer via une entité claim après la création Wikidata + presse.
 - [ ] **Bios réseaux** : mettre `barkantedjo.com` en lien dans TikTok, YouTube (À propos), Facebook,

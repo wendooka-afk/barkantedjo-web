@@ -29,7 +29,7 @@ export default class ErrorBoundary extends Component {
           fontFamily: 'Inter, sans-serif',
         }}
       >
-        <p style={{ color: '#FF6B00', fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', fontSize: 12 }}>
+        <p style={{ color: '#B4E701', fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', fontSize: 12 }}>
           Oups
         </p>
         <h1 style={{ fontFamily: 'Anton, sans-serif', fontSize: 40, margin: '12px 0' }}>
@@ -41,7 +41,7 @@ export default class ErrorBoundary extends Component {
         <div style={{ display: 'flex', gap: 12 }}>
           <button
             onClick={() => window.location.reload()}
-            style={{ background: 'linear-gradient(135deg,#FF6B00,#E02424)', color: '#0A0A0A', fontWeight: 700, border: 'none', padding: '12px 20px', borderRadius: 8, cursor: 'pointer' }}
+            style={{ background: 'linear-gradient(135deg,#B4E701,#056a2b)', color: '#0A0A0A', fontWeight: 700, border: 'none', padding: '12px 20px', borderRadius: 8, cursor: 'pointer' }}
           >
             Recharger
           </button>

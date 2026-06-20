@@ -4,7 +4,7 @@ import { supabase } from '../../lib/supabase'
 import { ADMIN_COLORS as C } from '../../components/admin/AdminShell'
 
 const STATUSES = ['nouveau', 'en cours', 'traité', 'archivé']
-const statusColor = { nouveau: '#FF6B00', 'en cours': '#FFA033', traité: '#3FB950', archivé: '#6B6B6B' }
+const statusColor = { nouveau: '#B4E701', 'en cours': '#7FB800', traité: '#3FB950', archivé: '#6B6B6B' }
 
 export default function Leads() {
   const [rows, setRows] = useState([])
@@ -83,4 +83,4 @@ export default function Leads() {
 }
 
 const chip = { background: 'transparent', border: `1px solid ${C.border}`, color: C.muted, padding: '7px 12px', borderRadius: 20, fontSize: 12, cursor: 'pointer', textTransform: 'capitalize' }
-const chipActive = { background: 'rgba(255,107,0,0.14)', borderColor: 'rgba(255,107,0,0.4)', color: '#fff' }
+const chipActive = { background: 'rgba(180,231,1,0.14)', borderColor: 'rgba(180,231,1,0.4)', color: '#fff' }

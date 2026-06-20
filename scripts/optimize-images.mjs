@@ -10,18 +10,20 @@ const pub = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'pu
 
 // source -> nom WebP de sortie
 const MAP = {
-  '621253415_18097279492924718_3691284739478424428_n.jpg': 'hero-portrait.webp',
-  '691583760_1632161675410693_977315285687019278_n.jpg': 'about-portrait.webp',
-  '504242303_1330506035576260_2553521985165676926_n.jpg': 'about-portrait-2.webp',
+  // Nouvelles photos studio HQ (juin 2026) — remplacent les anciennes photos floues
+  'Barkantedjo ok.webp': 'hero-portrait.webp',
+  'Barkantedjo portrait.webp': 'about-portrait.webp',
+  'Barkantedjo Portrait 2.webp': 'about-portrait-2.webp',
+  'home-hero-cutout.png': 'home-hero.webp', // détouré (rembg u2net_human_seg) depuis "Barkantedjo Homepage Hero .webp"
   '702335791_1638591624767698_4256854148893593688_n.jpg': 'explorer-poster.webp',
   '494436155_1299386162021581_6417945347941286688_n.jpg': 'savana-ambassador.webp',
   '489620915_1278824757411055_8825267190285617854_n.jpg': 'savana-signature.webp',
   '624819192_18097830625924718_8563925762396941071_n.jpg': 'savana-mekka.webp',
   '502710711_18073628245924718_801480654107278068_n.jpg': 'orange-event.webp',
-  'Barkantedjo home hero.png': 'home-hero.webp',
-  'hero_cutout.png': 'hero-cutout.webp',
-  'about_cutout.png': 'about-cutout.webp',
-  'savana_cutout.png': 'savana-cutout.webp',
+  // Cutouts héros (autres pages) — nouvelles photos HQ détourées (rembg u2net_human_seg), juin 2026
+  'hero-cutout-src.png': 'hero-cutout.webp',     // "Barkantedjo portrait" → Vidéos/Tour/Kit/Contact
+  'about-cutout-src.png': 'about-cutout.webp',   // "Barkantedjo ok" (pouce levé) → About
+  'savana-cutout-src.png': 'savana-cutout.webp', // "Barkantedjo Portrait 2" → Services/Partenariats
 }
 
 let before = 0, after = 0

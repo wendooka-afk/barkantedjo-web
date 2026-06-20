@@ -45,11 +45,11 @@ export default function Footer() {
             <Link to="/" className="font-display text-3xl tracking-wide" style={{ color: '#FFFFFF' }}>
               BARKANTEDJO
             </Link>
-            <p className="font-heading font-bold uppercase tracking-[0.25em] text-xs mt-4 mb-5" style={{ color: '#FF6B00' }}>
+            <p className="font-heading font-bold uppercase tracking-[0.25em] text-xs mt-4 mb-5" style={{ color: '#B4E701' }}>
               Explorer · Connecter · Impacter
             </p>
             <p className="text-sm leading-relaxed max-w-sm" style={{ color: '#B8B8B8' }}>
-              Digital Marketer · Content Creator · Comedian. De Ngaoundéré aux scènes du Nigeria — le béni qui fait rire tout un continent.
+              Humoriste Fulfulde · Influenceur · Créateur de contenu. De Ngaoundéré pour la conquête du monde — le béni qui fait rire et découvrir le continent.
             </p>
             <div className="flex gap-3 mt-6">
               {[
@@ -65,7 +65,7 @@ export default function Footer() {
                   aria-label={label}
                   className="w-11 h-11 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
                   style={{ backgroundColor: '#1C1C1C', border: '1px solid rgba(255,255,255,0.08)', color: '#FFFFFF' }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = '#FF6B00'; e.currentTarget.style.borderColor = 'rgba(255,107,0,0.5)' }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = '#B4E701'; e.currentTarget.style.borderColor = 'rgba(180,231,1,0.5)' }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)' }}
                 >
                   <Icon size={18} />
@@ -86,7 +86,7 @@ export default function Footer() {
                     to={l.path}
                     className="text-sm font-heading transition-colors duration-200"
                     style={{ color: '#B8B8B8' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FF6B00')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#B4E701')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = '#B8B8B8')}
                   >
                     {l.label}
@@ -134,7 +134,7 @@ export default function Footer() {
               </button>
             </form>
             {status === 'ok' && (
-              <p className="text-xs mt-2" style={{ color: '#FF6B00' }} role="status">
+              <p className="text-xs mt-2" style={{ color: '#B4E701' }} role="status">
                 Bienvenue chez les Barkantéens ! 🎉
               </p>
             )}
@@ -153,14 +153,14 @@ export default function Footer() {
             © 2026 Barkantedjo. Tous droits réservés.
           </p>
           <p className="text-xs font-body" style={{ color: '#B8B8B8' }}>
-            Conçu avec <span style={{ color: '#E02424' }}>♥</span> par{' '}
+            Conçu avec <span style={{ color: '#056a2b' }}>♥</span> par{' '}
             <a
               href="https://wendooka.com"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold transition-colors duration-200"
               style={{ color: '#FFFFFF' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#FF6B00')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#B4E701')}
               onMouseLeave={(e) => (e.currentTarget.style.color = '#FFFFFF')}
             >
               wendooka

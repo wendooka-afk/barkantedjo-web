@@ -31,7 +31,7 @@ export default function NotFound() {
         Cette page n'existe pas ou a été déplacée. Le béni t'invite à revenir sur le bon chemin.
       </p>
       <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
-        <Link to="/" style={{ background: 'linear-gradient(135deg,#FF6B00,#E02424)', color: '#0A0A0A', fontWeight: 700, padding: '12px 22px', borderRadius: 8, textDecoration: 'none' }}>
+        <Link to="/" style={{ background: 'linear-gradient(135deg,#B4E701,#056a2b)', color: '#0A0A0A', fontWeight: 700, padding: '12px 22px', borderRadius: 8, textDecoration: 'none' }}>
           Retour à l'accueil
         </Link>
         <Link to="/explorer-tour" style={{ border: '1px solid rgba(255,255,255,0.2)', color: '#fff', padding: '12px 22px', borderRadius: 8, textDecoration: 'none' }}>

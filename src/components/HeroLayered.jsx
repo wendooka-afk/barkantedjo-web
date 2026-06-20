@@ -57,7 +57,7 @@ export default function HeroLayered({
       <div
         aria-hidden
         className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full pointer-events-none z-0"
-        style={{ background: 'radial-gradient(circle, rgba(255,107,0,0.14) 0%, transparent 65%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(180,231,1,0.14) 0%, transparent 65%)' }}
       />
 
       {/* ── NOM GÉANT derrière (style Oprah : casse mixte, bien visible) ──
@@ -150,7 +150,7 @@ export default function HeroLayered({
                 aria-label={label}
                 className="flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 hover:scale-105"
                 style={{ border: '1px solid rgba(255,255,255,0.22)', color: '#FFFFFF', backgroundColor: 'rgba(10,10,10,0.35)' }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#FF6B00'; e.currentTarget.style.color = '#FF6B00' }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#B4E701'; e.currentTarget.style.color = '#B4E701' }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.22)'; e.currentTarget.style.color = '#FFFFFF' }}
               >
                 <Icon size={16} />

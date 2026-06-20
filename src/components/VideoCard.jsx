@@ -48,7 +48,7 @@ export default function VideoCard({ video }) {
       <div className="absolute inset-0 flex items-center justify-center">
         <div
           className="w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 bg-gradient-fire"
-          style={{ boxShadow: '0 8px 30px rgba(255,107,0,0.45)' }}
+          style={{ boxShadow: '0 8px 30px rgba(180,231,1,0.45)' }}
         >
           <Play size={22} fill="#0A0A0A" style={{ color: '#0A0A0A', marginLeft: 2 }} />
         </div>

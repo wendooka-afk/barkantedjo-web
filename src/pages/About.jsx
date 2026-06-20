@@ -13,7 +13,7 @@ const MILESTONES = [
   {
     year: '2020',
     label: 'L\'étincelle',
-    text: 'Confinement mondial. Pendant que le monde s\'arrête, Mohamed Ali allume sa caméra. Ses premiers sketches en Fulfulde sur TikTok explosent en quelques semaines. Une communauté naît.',
+    text: 'Confinement mondial. Pendant que le monde s\'arrête, Mohamad Ali allume sa caméra. Ses premiers sketches en Fulfulde sur TikTok explosent en quelques semaines. Une communauté naît.',
   },
   {
     year: '2022',
@@ -101,7 +101,7 @@ export default function About() {
               <Reveal delay={0}>
                 <SectionTitle
                   eyebrow="Origines"
-                  title="Ange béni venu des cieux"
+                  title={<>Ange béni venu<br /><span className="text-gradient">des cieux</span></>}
                   align="left"
                 />
               </Reveal>
@@ -129,7 +129,7 @@ export default function About() {
                   style={{ color: COLORS.textMuted }}
                 >
                   Son vrai nom :{' '}
-                  <strong style={{ color: COLORS.white }}>Mohamed Ali</strong>. Né à{' '}
+                  <strong style={{ color: COLORS.white }}>Mohamad Ali</strong>. Né à{' '}
                   <strong style={{ color: COLORS.white }}>Ngaoundéré</strong>, capitale de l'Adamaoua,
                   là où le plateau camerounais rencontre le ciel saharien. Bercé dès l'enfance par le
                   Fulfulde et la culture peule — ses récits, ses rythmes, ses personnages du quotidien.
@@ -153,7 +153,7 @@ export default function About() {
                 <div
                   className="rounded-2xl overflow-hidden aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 lg:ml-auto"
                   style={{
-                    boxShadow: '0 30px 80px rgba(255,107,0,0.15)',
+                    boxShadow: '0 30px 80px rgba(180,231,1,0.15)',
                     border: '1px solid rgba(255,255,255,0.08)',
                   }}
                 >
@@ -170,17 +170,6 @@ export default function About() {
                       background: 'linear-gradient(to top, rgba(22,22,22,0.8) 0%, transparent 100%)',
                     }}
                   />
-                </div>
-                {/* Badge décoratif */}
-                <div
-                  className="absolute -bottom-4 -left-4 px-5 py-3 rounded-2xl"
-                  style={{
-                    background: GRADIENT,
-                    boxShadow: '0 10px 30px rgba(255,107,0,0.3)',
-                  }}
-                >
-                  <p className="font-display text-black text-2xl leading-none">NGÉ</p>
-                  <p className="text-black text-xs font-bold tracking-widest uppercase">Ngaoundéré</p>
                 </div>
               </div>
             </Reveal>
@@ -204,7 +193,7 @@ export default function About() {
                 <div
                   className="rounded-2xl overflow-hidden aspect-[4/5] w-full max-w-md mx-auto"
                   style={{
-                    boxShadow: '0 30px 80px rgba(255,107,0,0.12)',
+                    boxShadow: '0 30px 80px rgba(180,231,1,0.12)',
                     border: '1px solid rgba(255,255,255,0.06)',
                   }}
                 >
@@ -221,7 +210,7 @@ export default function About() {
                   className="absolute -top-4 -right-4 w-20 h-20 rounded-full flex flex-col items-center justify-center"
                   style={{
                     background: GRADIENT,
-                    boxShadow: '0 10px 30px rgba(255,107,0,0.4)',
+                    boxShadow: '0 10px 30px rgba(180,231,1,0.4)',
                   }}
                 >
                   <span className="font-display text-black text-xl leading-none">2020</span>
@@ -234,7 +223,7 @@ export default function About() {
               <Reveal delay={0}>
                 <SectionTitle
                   eyebrow="Le Début"
-                  title="Un téléphone. Un confinement. Une vocation."
+                  title={<>Un téléphone. Un confinement. <span className="text-gradient">Une vocation.</span></>}
                   align="left"
                 />
               </Reveal>
@@ -246,7 +235,7 @@ export default function About() {
                 >
                   Nous sommes en{' '}
                   <strong style={{ color: COLORS.white }}>2020</strong>. Le monde entier est à l'arrêt.
-                  Mohamed Ali, lui, appuie sur Enregistrer. Ses premiers sketches en Fulfulde
+                  Mohamad Ali, lui, appuie sur Enregistrer. Ses premiers sketches en Fulfulde
                   surgissent sur TikTok comme une bouffée d'air frais dans un monde confiné.
                 </p>
               </Reveal>
@@ -290,7 +279,7 @@ export default function About() {
           <Reveal delay={0}>
             <SectionTitle
               eyebrow="L'Ascension"
-              title="Quand le Nord monte sur scène"
+              title={<>Quand le Nord<br /><span className="text-gradient">monte sur scène</span></>}
               subtitle="Africa Stand Up. Canal+. Les grands noms. La série. En quelques années, Barkantedjo passe du téléphone à la scène nationale."
               align="center"
               dark
@@ -365,7 +354,7 @@ export default function About() {
               <Reveal delay={0}>
                 <SectionTitle
                   eyebrow="Aujourd'hui"
-                  title="Trois casquettes. Zéro compromis."
+                  title={<>Trois casquettes.<br /><span className="text-gradient">Zéro compromis.</span></>}
                   align="left"
                 />
               </Reveal>
@@ -426,7 +415,7 @@ export default function About() {
                     style={{
                       backgroundColor: COLORS.card,
                       border: '1px solid rgba(255,255,255,0.06)',
-                      boxShadow: '0 10px 40px rgba(255,107,0,0.06)',
+                      boxShadow: '0 10px 40px rgba(180,231,1,0.06)',
                     }}
                   >
                     <span
@@ -469,7 +458,7 @@ export default function About() {
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
           style={{
-            background: 'radial-gradient(circle, rgba(255,107,0,0.06) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(180,231,1,0.06) 0%, transparent 70%)',
           }}
         />
 
@@ -491,7 +480,7 @@ export default function About() {
               className="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight"
               style={{ color: COLORS.white }}
             >
-              L'humour Fulfulde doit rayonner{' '}
+              L'humour Fulfulde doit rayonner<br />
               <span
                 style={{
                   background: GRADIENT,
@@ -631,7 +620,7 @@ export default function About() {
                           className="w-4 h-4 rounded-full mt-4"
                           style={{
                             background: GRADIENT,
-                            boxShadow: '0 0 12px rgba(255,107,0,0.5)',
+                            boxShadow: '0 0 12px rgba(180,231,1,0.5)',
                           }}
                         />
                       </div>
@@ -710,7 +699,7 @@ export default function About() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse 70% 50% at 50% 100%, rgba(255,107,0,0.1) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse 70% 50% at 50% 100%, rgba(180,231,1,0.1) 0%, transparent 70%)',
           }}
         />
 
@@ -757,7 +746,7 @@ export default function About() {
                 style={{
                   background: GRADIENT,
                   color: COLORS.black,
-                  boxShadow: '0 10px 30px rgba(255,107,0,0.25)',
+                  boxShadow: '0 10px 30px rgba(180,231,1,0.25)',
                 }}
               >
                 <TikTokIcon size={20} color={COLORS.black} />
@@ -792,7 +781,7 @@ export default function About() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(255,107,0,0.08) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(180,231,1,0.08) 0%, transparent 70%)',
           }}
         />
 

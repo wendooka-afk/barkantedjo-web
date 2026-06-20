@@ -1,6 +1,8 @@
 // ─────────────────────────────────────────────────────────────
 // BARKANTEDJO — Design System v3 "Spotlight"
-// Palette: Orange→Red gradient · Black/charcoal · White/cream
+// Palette: Lime→Vert foncé gradient (#B4E701 → #056a2b) · Black/charcoal · White/cream
+// NB: les clés COLORS.orange/red/amber conservent leur nom mais portent
+//     désormais les teintes vertes (évite de renommer text-orange partout).
 // Inspiration: Oprah cinematic hero + Knowledge17 cards/countdown
 // ─────────────────────────────────────────────────────────────
 
@@ -11,9 +13,9 @@ export const COLORS = {
   cardHover: '#242424',
   border: 'rgba(255,255,255,0.08)',
   borderStrong: 'rgba(255,255,255,0.16)',
-  orange: '#FF6B00',
-  red: '#E02424',
-  amber: '#FFA033',
+  orange: '#B4E701',
+  red: '#056a2b',
+  amber: '#7FB800',
   white: '#FFFFFF',
   textMuted: '#B8B8B8',
   textDim: '#8A8A8A', // remonté pour contraste WCAG AA
@@ -25,21 +27,21 @@ export const COLORS = {
 export const CROWD_BG = 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=1600&q=80'
 
 // Reusable inline-style helpers (agents can import these)
-export const GRADIENT = 'linear-gradient(135deg, #FF6B00 0%, #E02424 100%)'
-export const GRADIENT_SOFT = 'linear-gradient(135deg, rgba(255,107,0,0.15) 0%, rgba(224,36,36,0.15) 100%)'
+export const GRADIENT = 'linear-gradient(135deg, #B4E701 0%, #056a2b 100%)'
+export const GRADIENT_SOFT = 'linear-gradient(135deg, rgba(180,231,1,0.15) 0%, rgba(5,106,43,0.15) 100%)'
 
 // ─── Identité / communauté ───────────────────────────────────
 // "Barkantedjo" (singulier) = « le béni » en français.
 // La communauté = « Les Barkantéens ».
 export const BRAND = {
   name: 'Barkantedjo',
-  realName: 'Mohamed Ali',
+  realName: 'Mohamad Ali',
   meaning: 'le béni', // « ange béni venu des cieux »
   community: 'Les Barkantéens',
   communitySingular: 'Barkantéen',
   motto: 'Explorer · Connecter · Impacter',
   origin: 'Ngaoundéré, Adamaoua',
-  roles: ['Digital Marketer', 'Content Creator', 'Comedian'],
+  roles: ['Humoriste Fulfulde', 'Influenceur', 'Créateur de contenu', 'Digital Marketer'],
 }
 
 // ─── Réseaux sociaux (liens réels) ───────────────────────────
@@ -77,15 +79,15 @@ export const PARTNERS = [
 ]
 
 export const TOUR_CITIES = [
-  { city: 'Yola', country: 'Nigeria', date: '12 Juil. 2026', venue: 'Yola City Hall' },
-  { city: 'Gombe', country: 'Nigeria', date: '19 Juil. 2026', venue: 'Gombe Arena' },
-  { city: 'Kano', country: 'Nigeria', date: '02 Août 2026', venue: 'Kano Convention Center' },
-  { city: 'Kaduna', country: 'Nigeria', date: '16 Août 2026', venue: 'Kaduna Theatre' },
-  { city: 'Abuja', country: 'Nigeria', date: '06 Sept. 2026', venue: 'Abuja International' },
+  { city: 'Yola', country: 'Nigeria', date: '30 Sept. 2026', venue: 'Yola City Hall' },
+  { city: 'Gombe', country: 'Nigeria', date: '02 Oct. 2026', venue: 'Gombe Arena' },
+  { city: 'Kano', country: 'Nigeria', date: '04 Oct. 2026', venue: 'Kano Convention Center' },
+  { city: 'Kaduna', country: 'Nigeria', date: '06 Oct. 2026', venue: 'Kaduna Theatre' },
+  { city: 'Abuja', country: 'Nigeria', date: '08 Oct. 2026', venue: 'Abuja International' },
 ]
 
 // Countdown target — first show
-export const TOUR_START = '2026-07-12T19:00:00'
+export const TOUR_START = '2026-09-30T19:00:00'
 
 // Audience réelle par réseau (mai 2026)
 // TikTok 332.2K + Facebook 292K + YouTube 17.7K = 641.9K ≈ 642K Barkantéens
@@ -103,9 +105,9 @@ export const HERO = {
   home: {
     bgText: 'Barkantedjo',
     crowdBg: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=1600&q=80',
-    eyebrow: 'Digital Marketer · Content Creator · Comedian',
-    punchline: 'Le béni qui fait rire tout un continent.',
-    sub: "Plus de 640 000 Barkantéens. Du Fulfulde au français, des écrans verticaux aux scènes du Nigeria — un rire qui ne connaît aucune frontière.",
+    eyebrow: 'Humoriste Fulfulde · Influenceur · Créateur de contenu',
+    punchline: 'Le béni qui fait rire et découvrir le continent.',
+    sub: "De Ngaoundéré pour la conquête du monde. Plus de 640 000 Barkantéens, du Fulfulde au français, des écrans verticaux aux scènes du Nigeria — un rire qui ne connaît aucune frontière.",
     portrait: IMAGES.homeHero,
   },
   about: {
@@ -126,7 +128,21 @@ export const HERO = {
     bgText: 'Nigeria',
     eyebrow: 'Tournée Internationale 2026',
     punchline: 'Cinq villes. Un seul béni. Zéro frontière.',
-    sub: "The Explorer Tour traverse le Nigeria. L'humour sahélien débarque sur la plus grande scène d'Afrique de l'Ouest.",
+    sub: "Le génie créateur de Barkantedjo nous fera découvrir plusieurs villes du Nigeria, mais aussi des cultures, traditions, ethnies et commerces comme on n'en a jamais vu.",
+    portrait: IMAGES.heroCutout,
+  },
+  services: {
+    bgText: 'Services',
+    eyebrow: 'Collaborations de marque',
+    punchline: 'Le béni au service de ta marque.',
+    sub: "Influence marketing, ambassadeur de marque, présentation d'événements, publicités vidéo, UGC, campagnes digitales et consultance — la force de frappe de 640 000 Barkantéens au service de tes objectifs.",
+    portrait: IMAGES.savanaCutout,
+  },
+  kit: {
+    bgText: 'Media Kit',
+    eyebrow: 'Portfolio & Media Kit',
+    punchline: 'Le dossier pro du béni.',
+    sub: "Audience, chiffres à impact, formats et collaborations — tout ce qu'une marque doit savoir sur Barkantedjo, réuni dans un kit média professionnel à télécharger.",
     portrait: IMAGES.heroCutout,
   },
   partners: {
@@ -197,6 +213,55 @@ export const NAV_LINKS = [
   { label: 'À Propos', path: '/about' },
   { label: 'Vidéos', path: '/videos' },
   { label: 'Explorer Tour', path: '/explorer-tour' },
+  { label: 'Services', path: '/services' },
+  { label: 'Media Kit', path: '/kit' },
   { label: 'Partenariats', path: '/partenariats' },
   { label: 'Contact', path: '/contact' },
+]
+
+// ─── Services proposés (page /services) ──────────────────────
+// icon = nom d'icône lucide-react (résolu dans la page Services).
+export const SERVICES = [
+  {
+    icon: 'Megaphone',
+    title: 'Influence marketing',
+    description:
+      "Des campagnes d'influence qui touchent 640 000 Barkantéens engagés. Sketches sponsorisés, intégrations natives et formats viraux pensés pour convertir.",
+  },
+  {
+    icon: 'BadgeCheck',
+    title: 'Ambassadeur de marque',
+    description:
+      'Représentation premium et long terme. Le béni porte ton image avec la même authenticité qui a séduit Savana, Orange et Canal+.',
+  },
+  {
+    icon: 'Mic',
+    title: "Présentation d'événements",
+    description:
+      "Animation de soirées, lancements, galas et festivals. Une présence de scène qui captive le public, du Cameroun au Nigeria.",
+  },
+  {
+    icon: 'Video',
+    title: 'Publicités vidéo',
+    description:
+      'Spots publicitaires créatifs, scénarisés et produits en Fulfulde ou en français. Le format court qui fait vendre et rester en mémoire.',
+  },
+  {
+    icon: 'Clapperboard',
+    title: 'UGC',
+    description:
+      "Contenu authentique (User-Generated Content) filmé à la verticale, calibré pour TikTok, Reels et Shorts. Le ton vrai qui performe sur les algorithmes.",
+  },
+  {
+    icon: 'Rocket',
+    title: 'Campagnes digitales',
+    description:
+      "Stratégie, création et diffusion multiplateformes. Du concept au reporting, des campagnes digitales pilotées par un vrai digital marketer.",
+  },
+  {
+    icon: 'Lightbulb',
+    title: 'Consultance en communication',
+    description:
+      "Conseil en communication, positionnement de marque et stratégie de contenu pour percer auprès des audiences d'Afrique centrale et de l'Ouest.",
+  },
 ]

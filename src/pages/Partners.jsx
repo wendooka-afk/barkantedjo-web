@@ -62,7 +62,7 @@ const PARTNERS_DATA = [
 
 // ─── Audience & impact stats ───────────────────────────────────────────────
 const AUDIENCE_STATS = [
-  { value: '292K+', label: 'Barkantéens' },
+  { value: '640K+', label: 'Barkantéens' },
   { value: '2M+', label: 'Reach mensuel' },
   { value: '8.5%', label: "Taux d'engagement" },
   { value: '3', label: 'Langues couvertes' },
@@ -72,9 +72,9 @@ const AUDIENCE_STATS = [
 
 // ─── Category badge colours (orange-translucent only) ─────────────────────
 const CATEGORY_STYLE = {
-  background: 'rgba(255,107,0,0.15)',
-  color: '#FF6B00',
-  border: '1px solid rgba(255,107,0,0.3)',
+  background: 'rgba(180,231,1,0.15)',
+  color: '#B4E701',
+  border: '1px solid rgba(180,231,1,0.3)',
 }
 
 // ─── Partner card ──────────────────────────────────────────────────────────
@@ -273,7 +273,7 @@ export default function Partners() {
           <Reveal>
             <SectionTitle
               eyebrow="PARTENARIATS OFFICIELS"
-              title="Les marques qui ont choisi le béni"
+              title={<>Les marques qui ont choisi<br /><span className="text-gradient">le béni</span></>}
               subtitle={`De la finance islamique aux télécoms, des institutions européennes aux médias panafricains — des partenariats bâtis sur l'authenticité de ${BRAND.name}, « ${BRAND.meaning} ».`}
               align="center"
             />
@@ -296,7 +296,7 @@ export default function Partners() {
           <Reveal>
             <SectionTitle
               eyebrow="CE QU'ILS DISENT"
-              title="La parole des marques leaders"
+              title={<>La parole des marques <span className="text-gradient">leaders</span></>}
               subtitle={`Des campagnes mémorables. Des résultats mesurables. Des partenariats que des millions de ${BRAND.communitySingular}s ne sont pas près d'oublier.`}
               align="center"
             />
@@ -319,8 +319,8 @@ export default function Partners() {
           <Reveal>
             <SectionTitle
               eyebrow="AUDIENCE & IMPACT"
-              title="Des chiffres qui ne mentent pas"
-              subtitle={`292 000 ${BRAND.communitySingular}s. Une communauté engagée, multilingue, répartie entre le Cameroun, le Nigeria et la diaspora africaine. Des millions de personnes. Un seul béni.`}
+              title={<span className="whitespace-normal lg:whitespace-nowrap">Des chiffres qui ne mentent pas</span>}
+              subtitle={`640 000 ${BRAND.communitySingular}s. Une communauté engagée, multilingue, répartie entre le Cameroun, le Nigeria et la diaspora africaine. Des millions de personnes. Un seul béni.`}
               align="center"
             />
           </Reveal>
@@ -332,8 +332,8 @@ export default function Partners() {
                 <Star
                   key={i}
                   size={16}
-                  fill="#FF6B00"
-                  style={{ color: '#FF6B00' }}
+                  fill="#B4E701"
+                  style={{ color: '#B4E701' }}
                 />
               ))}
             </div>
@@ -358,8 +358,8 @@ export default function Partners() {
               className="rounded-2xl p-10 sm:p-14 text-center relative overflow-hidden"
               style={{
                 backgroundColor: COLORS.card,
-                border: '1px solid rgba(255,107,0,0.2)',
-                boxShadow: '0 0 80px rgba(255,107,0,0.08)',
+                border: '1px solid rgba(180,231,1,0.2)',
+                boxShadow: '0 0 80px rgba(180,231,1,0.08)',
               }}
             >
               {/* Glow accent */}

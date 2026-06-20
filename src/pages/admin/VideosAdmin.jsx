@@ -58,7 +58,7 @@ export default function VideosAdmin() {
               {r.poster ? <img src={r.poster} alt="" style={{ width: 42, height: 56, objectFit: 'cover', borderRadius: 6, flexShrink: 0 }} /> : null}
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ color: C.white, fontSize: 14, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 6 }}>
-                  {r.featured && <Star size={13} fill="#FF6B00" color="#FF6B00" />}
+                  {r.featured && <Star size={13} fill="#B4E701" color="#B4E701" />}
                   <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{r.title}</span>
                 </div>
                 <div style={{ color: C.dim, fontSize: 12 }}>{r.platform} · {r.category || '—'} · {r.views || '—'} vues</div>
@@ -76,7 +76,7 @@ export default function VideosAdmin() {
 function Editor({ draft, setDraft, onSave, onCancel }) {
   const f = (k) => (e) => setDraft((d) => ({ ...d, [k]: e.target.value }))
   return (
-    <div style={{ background: C.panel, border: '1px solid rgba(255,107,0,0.3)', borderRadius: 12, padding: 16, marginBottom: 10 }}>
+    <div style={{ background: C.panel, border: '1px solid rgba(180,231,1,0.3)', borderRadius: 12, padding: 16, marginBottom: 10 }}>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: 12 }}>
         <Field label="Plateforme">
           <select style={inp} value={draft.platform} onChange={f('platform')}>
@@ -115,6 +115,6 @@ function Field({ label, children }) {
 }
 
 const inp = { width: '100%', background: 'transparent', border: `1px solid ${C.border}`, borderRadius: 8, color: '#fff', padding: '9px 12px', fontSize: 13, outline: 'none' }
-const primaryBtn = { display: 'flex', alignItems: 'center', gap: 7, background: 'linear-gradient(135deg,#FF6B00,#E02424)', color: '#0A0A0A', fontWeight: 700, border: 'none', padding: '9px 14px', borderRadius: 8, fontSize: 13, cursor: 'pointer' }
+const primaryBtn = { display: 'flex', alignItems: 'center', gap: 7, background: 'linear-gradient(135deg,#B4E701,#056a2b)', color: '#0A0A0A', fontWeight: 700, border: 'none', padding: '9px 14px', borderRadius: 8, fontSize: 13, cursor: 'pointer' }
 const iconBtn = { background: 'transparent', border: `1px solid ${C.border}`, color: C.white, padding: 8, borderRadius: 8, cursor: 'pointer', display: 'flex' }
 const iconBtnText = { display: 'flex', alignItems: 'center', gap: 7, background: 'transparent', border: `1px solid ${C.border}`, color: C.muted, padding: '9px 14px', borderRadius: 8, fontSize: 13, cursor: 'pointer' }

@@ -13,7 +13,7 @@ import { useTourDates } from '../lib/content'
 // ─── Info mini-cards data ────────────────────────────────────────────
 const INFO_CARDS = [
   { icon: MapPin,    label: '5 Villes',           sub: 'Nigeria — de Yola à Abuja' },
-  { icon: Calendar, label: 'Juil. – Sept. 2026',  sub: 'Saison historique' },
+  { icon: Calendar, label: 'Sept. – Oct. 2026',   sub: 'Saison historique' },
   { icon: Users,    label: 'Les Barkantéens',      sub: 'Des milliers attendus' },
   { icon: Ticket,   label: 'Billetterie ouverte',  sub: 'Places limitées' },
 ]
@@ -50,8 +50,8 @@ export default function ExplorerTour() {
               <div
                 className="rounded-2xl overflow-hidden max-w-[320px] w-full mx-auto"
                 style={{
-                  border: '1px solid rgba(255,107,0,0.30)',
-                  boxShadow: '0 30px 80px rgba(255,107,0,0.18), 0 0 0 1px rgba(255,107,0,0.08)',
+                  border: '1px solid rgba(180,231,1,0.30)',
+                  boxShadow: '0 30px 80px rgba(180,231,1,0.18), 0 0 0 1px rgba(180,231,1,0.08)',
                 }}
               >
                 <img
@@ -80,10 +80,10 @@ export default function ExplorerTour() {
                     className="font-body text-base sm:text-lg leading-relaxed"
                     style={{ color: COLORS.textMuted }}
                   >
-                    The Explorer Tour, c'est une première. Barkantedjo traverse cinq villes
-                    nigérianes pour porter l'humour sahélien au-delà de toutes les frontières.
-                    Du Fulfulde aux rires universels — les Barkantéens du Nigeria ont rendez-vous
-                    avec leur propre histoire.
+                    Le génie créateur de Barkantedjo nous fera découvrir plusieurs villes du
+                    Nigeria, mais aussi des cultures, traditions, ethnies et commerces comme on
+                    n'en a jamais vu. Du Fulfulde aux rires universels — les Barkantéens du
+                    Nigeria ont rendez-vous avec leur propre histoire.
                   </p>
                 </div>
               </Reveal>
@@ -97,15 +97,15 @@ export default function ExplorerTour() {
                       className="flex items-center gap-3 p-4 rounded-xl"
                       style={{
                         background:
-                          'linear-gradient(135deg, rgba(255,107,0,0.07) 0%, rgba(224,36,36,0.05) 100%)',
-                        border: '1px solid rgba(255,107,0,0.18)',
+                          'linear-gradient(135deg, rgba(180,231,1,0.07) 0%, rgba(5,106,43,0.05) 100%)',
+                        border: '1px solid rgba(180,231,1,0.18)',
                       }}
                     >
                       <div
                         className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center"
-                        style={{ background: 'rgba(255,107,0,0.15)' }}
+                        style={{ background: 'rgba(180,231,1,0.15)' }}
                       >
-                        <Icon size={18} style={{ color: '#FF6B00' }} />
+                        <Icon size={18} style={{ color: '#B4E701' }} />
                       </div>
                       <div>
                         <p
@@ -190,13 +190,13 @@ export default function ExplorerTour() {
           {/* ── COUNTDOWN — juste sous la liste des villes ── */}
           <Reveal delay={120}>
             <div className="mt-14">
-              <p className="eyebrow text-center mb-5">Première à Yola — 12 Juillet 2026</p>
+              <p className="eyebrow text-center mb-5">Première à Yola — 30 Septembre 2026</p>
               <div
                 className="w-full flex flex-col items-center gap-8 px-6 py-10 sm:py-12 rounded-2xl"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(255,107,0,0.08) 0%, rgba(224,36,36,0.08) 100%)',
-                  border: '1px solid rgba(255,107,0,0.20)',
-                  boxShadow: '0 0 60px rgba(255,107,0,0.08), inset 0 1px 0 rgba(255,107,0,0.12)',
+                  background: 'linear-gradient(135deg, rgba(180,231,1,0.08) 0%, rgba(5,106,43,0.08) 100%)',
+                  border: '1px solid rgba(180,231,1,0.20)',
+                  boxShadow: '0 0 60px rgba(180,231,1,0.08), inset 0 1px 0 rgba(180,231,1,0.12)',
                 }}
               >
                 <Countdown target={TOUR_START} />
@@ -221,7 +221,7 @@ export default function ExplorerTour() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,107,0,0.12) 0%, transparent 70%)',
+              'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(180,231,1,0.12) 0%, transparent 70%)',
           }}
         />
 

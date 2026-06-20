@@ -190,7 +190,7 @@ export default function Contact() {
                       padding: '16px',
                       transition: 'border-color 0.2s',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(255,107,0,0.3)')}
+                    onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(180,231,1,0.3)')}
                     onMouseLeave={(e) => (e.currentTarget.style.borderColor = COLORS.border)}
                   >
                     {/* Pastille dégradé */}
@@ -204,7 +204,7 @@ export default function Contact() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         flexShrink: 0,
-                        boxShadow: '0 6px 20px rgba(255,107,0,0.25)',
+                        boxShadow: '0 6px 20px rgba(180,231,1,0.25)',
                       }}
                     >
                       <Icon size={17} color="#fff" />
@@ -257,7 +257,7 @@ export default function Contact() {
               <div
                 style={{
                   background: GRADIENT_SOFT,
-                  border: '1px solid rgba(255,107,0,0.2)',
+                  border: '1px solid rgba(180,231,1,0.2)',
                   borderRadius: '12px',
                   padding: '20px',
                   marginBottom: '20px',
@@ -350,8 +350,8 @@ export default function Contact() {
                         transition: 'border-color 0.2s, background-color 0.2s',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(255,107,0,0.35)'
-                        e.currentTarget.style.backgroundColor = 'rgba(255,107,0,0.06)'
+                        e.currentTarget.style.borderColor = 'rgba(180,231,1,0.35)'
+                        e.currentTarget.style.backgroundColor = 'rgba(180,231,1,0.06)'
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
@@ -426,7 +426,7 @@ export default function Contact() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       marginBottom: '28px',
-                      boxShadow: '0 16px 48px rgba(255,107,0,0.3)',
+                      boxShadow: '0 16px 48px rgba(180,231,1,0.3)',
                     }}
                   >
                     <CheckCircle size={40} color="#fff" />

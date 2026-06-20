@@ -2,7 +2,7 @@
 // SEO / GEO — config centrale + builders de données structurées
 // Domaine: barkantedjo.com  ·  FR  ·  Person/Event/VideoObject schemas
 // ─────────────────────────────────────────────────────────────
-import { SOCIALS, BRAND, TOUR_CITIES, VIDEOS } from './constants'
+import { SOCIALS, BRAND, TOUR_CITIES, VIDEOS, SERVICES } from './constants'
 
 export const SITE_URL = 'https://barkantedjo.com'
 export const SITE_NAME = 'Barkantedjo'
@@ -42,7 +42,16 @@ export const personSchema = {
   birthPlace: { '@type': 'Place', name: 'Ngaoundéré, Adamaoua, Cameroun' },
   nationality: { '@type': 'Country', name: 'Cameroun' },
   knowsLanguage: ['Fulfulde', 'Français'],
-  knowsAbout: ['Humour Fulfulde', 'Stand-up africain', 'Création de contenu', 'Marketing digital', 'Web-comédie'],
+  knowsAbout: [
+    'Humour Fulfulde',
+    'Humoriste Cameroun',
+    'Humoriste du Grand Nord',
+    'Influenceur Cameroun',
+    'Créateur de contenu Cameroun',
+    'Stand-up africain',
+    'Marketing digital',
+    'Web-comédie',
+  ],
   sameAs: SAME_AS,
 }
 
@@ -138,6 +147,26 @@ export function videoListSchema(videos) {
   }
 }
 
+// ── Catalogue de services (OfferCatalog) pour la page /services ──
+export function servicesSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'OfferCatalog',
+    name: 'Services de Barkantedjo',
+    provider: { '@type': 'Person', name: BRAND.name, '@id': `${SITE_URL}/#person` },
+    itemListElement: SERVICES.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: s.title,
+        description: s.description,
+        provider: { '@id': `${SITE_URL}/#person` },
+        areaServed: ['Cameroun', 'Nigeria', 'Afrique francophone'],
+      },
+    })),
+  }
+}
+
 // ── FAQPage (GEO : réponses directes pour les moteurs IA) ──
 export function faqSchema(qa) {
   return {
@@ -161,15 +190,15 @@ export function faqSchema(qa) {
 // ─────────────────────────────────────────────────────────────
 export const ROUTE_SEO = {
   '/': {
-    title: 'Barkantedjo — Humoriste camerounais, le béni qui fait rire un continent',
+    title: 'Barkantedjo — Humoriste Fulfulde & influenceur camerounais, le béni',
     description:
-      'Barkantedjo (Mohamed Ali), humoriste, content creator et digital marketer de Ngaoundéré. Humour Fulfulde, 640 000+ Barkantéens sur TikTok, Facebook et YouTube. Explorer Tour Nigeria 2026.',
+      "Barkantedjo (Mohamad Ali) : humoriste Fulfulde, influenceur et créateur de contenu camerounais de Ngaoundéré. L'humoriste du Grand Nord, 640 000+ Barkantéens sur TikTok, Facebook et YouTube. Explorer Tour Nigeria 2026.",
     type: 'website',
     jsonLd: [
       faqSchema([
         {
           q: 'Qui est Barkantedjo ?',
-          a: "Barkantedjo, de son vrai nom Mohamed Ali, est un humoriste, content creator et digital marketer camerounais né à Ngaoundéré (Adamaoua). Son nom signifie « le béni » en Fulfulde. Il est pionnier de l'humour Fulfulde en format vertical et réunit plus de 640 000 abonnés sur TikTok, Facebook et YouTube.",
+          a: "Barkantedjo, de son vrai nom Mohamad Ali, est un humoriste Fulfulde, influenceur et créateur de contenu camerounais né à Ngaoundéré (Adamaoua). Surnommé « l'humoriste du Grand Nord », son nom signifie « le béni » en Fulfulde. Pionnier de l'humour Fulfulde en format vertical, il réunit plus de 640 000 abonnés sur TikTok, Facebook et YouTube.",
         },
         {
           q: 'Que signifie le nom Barkantedjo ?',
@@ -181,15 +210,15 @@ export const ROUTE_SEO = {
         },
         {
           q: "Qu'est-ce que The Explorer Tour ?",
-          a: 'The Explorer Tour est la première tournée internationale de Barkantedjo, qui traverse cinq villes du Nigeria (Yola, Gombe, Kano, Kaduna, Abuja) de juillet à septembre 2026.',
+          a: 'The Explorer Tour est la première tournée internationale de Barkantedjo, qui traverse cinq villes du Nigeria (Yola, Gombe, Kano, Kaduna, Abuja) de septembre à octobre 2026.',
         },
       ]),
     ],
   },
   '/about': {
-    title: 'À propos de Barkantedjo — Mohamed Ali, « le béni » de Ngaoundéré',
+    title: 'À propos de Barkantedjo — Mohamad Ali, « le béni » de Ngaoundéré',
     description:
-      "L'histoire de Barkantedjo (Mohamed Ali) : de Ngaoundéré aux scènes du Nigeria. Pionnier de l'humour Fulfulde, Digital Marketer, Content Creator et Comedian. Parcours, vision et impact.",
+      "L'histoire de Barkantedjo (Mohamad Ali) : de Ngaoundéré aux scènes du Nigeria. Humoriste Fulfulde, influenceur et créateur de contenu du Grand Nord. Parcours, vision et impact.",
     type: 'profile',
     jsonLd: [
       {
@@ -220,7 +249,7 @@ export const ROUTE_SEO = {
   '/explorer-tour': {
     title: 'The Explorer Tour 2026 — Barkantedjo en tournée au Nigeria (5 villes)',
     description:
-      'The Explorer Tour : la première tournée internationale de Barkantedjo traverse 5 villes du Nigeria — Yola, Gombe, Kano, Kaduna, Abuja — de juillet à septembre 2026. Dates, lieux et billetterie.',
+      'The Explorer Tour : la première tournée internationale de Barkantedjo traverse 5 villes du Nigeria — Yola, Gombe, Kano, Kaduna, Abuja — de septembre à octobre 2026. Dates, lieux et billetterie.',
     type: 'website',
     jsonLd: [
       ...tourEvents(),
@@ -231,11 +260,60 @@ export const ROUTE_SEO = {
       faqSchema([
         {
           q: 'Quelles villes la tournée Explorer Tour de Barkantedjo visite-t-elle ?',
-          a: 'The Explorer Tour 2026 passe par cinq villes du Nigeria : Yola (12 juillet), Gombe (19 juillet), Kano (2 août), Kaduna (16 août) et Abuja (6 septembre 2026).',
+          a: 'The Explorer Tour 2026 passe par cinq villes du Nigeria : Yola (30 septembre), Gombe (2 octobre), Kano (4 octobre), Kaduna (6 octobre) et Abuja (8 octobre 2026).',
         },
         {
           q: 'Quand commence The Explorer Tour ?',
-          a: 'La tournée démarre le 12 juillet 2026 à Yola (Yola City Hall), au Nigeria.',
+          a: 'La tournée démarre le 30 septembre 2026 à Yola (Yola City Hall), au Nigeria.',
+        },
+      ]),
+    ],
+  },
+  '/services': {
+    title: 'Services — Barkantedjo : influence marketing, UGC & ambassadeur de marque',
+    description:
+      "Les services de Barkantedjo : influence marketing, ambassadeur de marque, présentation d'événements, publicités vidéo, UGC, campagnes digitales et consultance en communication. 640 000+ Barkantéens au service de ta marque.",
+    type: 'website',
+    jsonLd: [
+      servicesSchema(),
+      breadcrumb([
+        { name: 'Accueil', path: '/' },
+        { name: 'Services', path: '/services' },
+      ]),
+      faqSchema([
+        {
+          q: 'Quels services propose Barkantedjo ?',
+          a: "Barkantedjo propose : influence marketing, ambassadeur de marque, présentation d'événements, publicités vidéo, contenu UGC, campagnes digitales et consultance en communication.",
+        },
+        {
+          q: 'Comment collaborer avec Barkantedjo ?',
+          a: 'Pour une campagne, un événement, une publicité ou de la consultance, contactez Barkantedjo via la page Contact ou à booking@barkantedjo.com. Réponse garantie sous 48h.',
+        },
+      ]),
+    ],
+  },
+  '/kit': {
+    title: 'Media Kit & Portfolio — Barkantedjo (chiffres, audience, collaborations)',
+    description:
+      "Le kit média professionnel de Barkantedjo à télécharger : 642 000+ abonnés, 100M+ de vues cumulées, audiences au Cameroun, Nigeria, Tchad, Niger, France et États-Unis. Langues : Fulfulde, français, anglais, haoussa. Demande de collaboration en ligne.",
+    type: 'website',
+    jsonLd: [
+      breadcrumb([
+        { name: 'Accueil', path: '/' },
+        { name: 'Media Kit', path: '/kit' },
+      ]),
+      faqSchema([
+        {
+          q: "Combien d'abonnés et de vues Barkantedjo cumule-t-il ?",
+          a: 'Barkantedjo réunit plus de 642 000 abonnés et plus de 100 millions de vues cumulées sur TikTok, Facebook et YouTube.',
+        },
+        {
+          q: 'Dans quels pays Barkantedjo a-t-il une audience ?',
+          a: 'Son audience est présente au Cameroun, au Nigeria, au Tchad, au Niger, en France et aux États-Unis.',
+        },
+        {
+          q: 'Quelles langues Barkantedjo parle-t-il dans ses contenus ?',
+          a: 'Il s\'exprime en fulfulde, en français, en anglais et en haoussa.',
         },
       ]),
     ],

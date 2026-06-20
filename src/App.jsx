@@ -6,6 +6,8 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Videos from './pages/Videos'
 import ExplorerTour from './pages/ExplorerTour'
+import Services from './pages/Services'
+import Kit from './pages/Kit'
 import Partners from './pages/Partners'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
@@ -50,6 +52,8 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/videos" element={<Videos />} />
             <Route path="/explorer-tour" element={<ExplorerTour />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/kit" element={<Kit />} />
             <Route path="/partenariats" element={<Partners />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />

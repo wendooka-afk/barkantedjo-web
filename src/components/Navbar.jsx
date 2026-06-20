@@ -34,7 +34,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {NAV_LINKS.map((l) => {
               const active = location.pathname === l.path
               return (
@@ -42,9 +42,9 @@ export default function Navbar() {
                   key={l.path}
                   to={l.path}
                   className="font-heading font-semibold text-sm transition-colors duration-200 relative"
-                  style={{ color: active ? '#FF6B00' : '#FFFFFF' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#FF6B00')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = active ? '#FF6B00' : '#FFFFFF')}
+                  style={{ color: active ? '#B4E701' : '#FFFFFF' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#B4E701')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = active ? '#B4E701' : '#FFFFFF')}
                 >
                   {l.label}
                 </Link>
@@ -60,7 +60,7 @@ export default function Navbar() {
           </div>
 
           <button
-            className="md:hidden p-2"
+            className="lg:hidden p-2"
             style={{ color: '#FFFFFF' }}
             onClick={() => setOpen(!open)}
             aria-label="Menu"
@@ -72,7 +72,7 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className="fixed inset-0 z-40 md:hidden transition-opacity duration-300"
+        className="fixed inset-0 z-40 lg:hidden transition-opacity duration-300"
         style={{ opacity: open ? 1 : 0, pointerEvents: open ? 'all' : 'none' }}
       >
         <div className="absolute inset-0" style={{ backgroundColor: 'rgba(10,10,10,0.7)' }} onClick={() => setOpen(false)} />
@@ -92,7 +92,7 @@ export default function Navbar() {
                 key={l.path}
                 to={l.path}
                 className="font-heading font-semibold text-lg py-3"
-                style={{ color: active ? '#FF6B00' : '#FFFFFF', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+                style={{ color: active ? '#B4E701' : '#FFFFFF', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
               >
                 {l.label}
               </Link>
