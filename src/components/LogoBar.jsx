@@ -2,7 +2,7 @@ import { PARTNERS } from '../lib/constants'
 
 // Répète la liste pour remplir le défilement, tout en gardant le split exact
 // 50/50 nécessaire à la boucle marquee (translateX(-50%) sans saut visible).
-const REPEATS = 3
+const REPEATS = 2
 const half = Array.from({ length: REPEATS }, () => PARTNERS).flat()
 
 export default function LogoBar({ label = "Ils m'ont fait confiance" }) {
