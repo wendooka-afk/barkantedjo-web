@@ -1,4 +1,4 @@
-import { PARTNERS } from '../lib/constants'
+import { PARTNERS, COLORS } from '../lib/constants'
 
 // Répète la liste pour remplir le défilement, tout en gardant le split exact
 // 50/50 nécessaire à la boucle marquee (translateX(-50%) sans saut visible).
@@ -15,25 +15,37 @@ export default function LogoBar({ label = "Ils m'ont fait confiance" }) {
     >
       <p className="eyebrow text-center mb-6" style={{ color: '#8A8A8A' }}>{label}</p>
       <div className="relative">
-        <div className="flex w-max animate-marquee gap-6 sm:gap-8">
+        <div className="flex w-max animate-marquee gap-4 sm:gap-5">
           {items.map((p, i) => (
             <div
               key={i}
-              className="shrink-0 flex items-center justify-center rounded-xl transition-transform duration-300 hover:scale-105"
+              className="shrink-0 flex items-center gap-3 rounded-xl transition-transform duration-300 hover:scale-105"
               style={{
-                backgroundColor: '#F5F5F2',
-                height: '64px',
-                width: '160px',
-                padding: '10px 20px',
+                backgroundColor: COLORS.card,
+                border: `1px solid ${COLORS.border}`,
+                padding: '10px 18px 10px 10px',
               }}
             >
-              <img
-                src={p.logo}
-                alt={p.name}
-                loading="lazy"
-                decoding="async"
-                className="max-h-full max-w-full object-contain"
-              />
+              {/* Logo — carré clair pour rester lisible quel que soit le fond du fichier */}
+              <div
+                className="shrink-0 flex items-center justify-center rounded-lg"
+                style={{ backgroundColor: '#F5F5F2', width: '44px', height: '44px', padding: '6px' }}
+              >
+                <img
+                  src={p.logo}
+                  alt={p.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+              {/* Nom de la structure */}
+              <span
+                className="font-heading font-bold text-sm whitespace-nowrap"
+                style={{ color: COLORS.white }}
+              >
+                {p.name}
+              </span>
             </div>
           ))}
         </div>
