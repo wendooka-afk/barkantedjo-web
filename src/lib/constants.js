@@ -69,13 +69,11 @@ export const IMAGES = {
 }
 
 // "Featured in" logo bar (Oprah-style)
+// Un seul partenaire = un seul logo présent dans public/. Retiré si le fichier
+// logo n'existe pas encore (Orange, Global Gateway, TATITECH, Sweet FM en attente).
 export const PARTNERS = [
-  { name: 'Canal+' },
-  { name: 'Savana' },
-  { name: 'Orange' },
-  { name: 'Global Gateway' },
-  { name: 'TATITECH' },
-  { name: 'Sweet FM' },
+  { name: 'Canal+', logo: '/CANAL+.jpg' },
+  { name: 'Savana', logo: '/SAVANA.jpg' },
 ]
 
 export const TOUR_CITIES = [

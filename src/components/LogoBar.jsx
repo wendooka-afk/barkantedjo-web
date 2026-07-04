@@ -1,7 +1,12 @@
 import { PARTNERS } from '../lib/constants'
 
-export default function LogoBar({ label = 'Ils lui font confiance' }) {
-  const items = [...PARTNERS, ...PARTNERS] // duplicate for seamless marquee
+// Répète la liste pour remplir le défilement, tout en gardant le split exact
+// 50/50 nécessaire à la boucle marquee (translateX(-50%) sans saut visible).
+const REPEATS = 3
+const half = Array.from({ length: REPEATS }, () => PARTNERS).flat()
+
+export default function LogoBar({ label = "Ils m'ont fait confiance" }) {
+  const items = [...half, ...half]
 
   return (
     <div
@@ -10,17 +15,26 @@ export default function LogoBar({ label = 'Ils lui font confiance' }) {
     >
       <p className="eyebrow text-center mb-6" style={{ color: '#8A8A8A' }}>{label}</p>
       <div className="relative">
-        <div className="flex w-max animate-marquee gap-12 sm:gap-20">
+        <div className="flex w-max animate-marquee gap-6 sm:gap-8">
           {items.map((p, i) => (
-            <span
+            <div
               key={i}
-              className="font-heading font-extrabold text-lg sm:text-2xl whitespace-nowrap shrink-0 transition-colors duration-300"
-              style={{ color: '#8A8A8A' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#B4E701')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#8A8A8A')}
+              className="shrink-0 flex items-center justify-center rounded-xl transition-transform duration-300 hover:scale-105"
+              style={{
+                backgroundColor: '#F5F5F2',
+                height: '64px',
+                width: '160px',
+                padding: '10px 20px',
+              }}
             >
-              {p.name}
-            </span>
+              <img
+                src={p.logo}
+                alt={p.name}
+                loading="lazy"
+                decoding="async"
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
           ))}
         </div>
         {/* edge fades */}

@@ -262,7 +262,7 @@ export default function Partners() {
       </HeroLayered>
 
       {/* ── LOGO BAR ─────────────────────────────────────────────────────── */}
-      <LogoBar label="ILS LUI FONT CONFIANCE" />
+      <LogoBar label="ILS M'ONT FAIT CONFIANCE" />
 
       {/* ── GRILLE PARTENAIRES ───────────────────────────────────────────── */}
       <section

@@ -435,7 +435,7 @@ export default function Home() {
       </HeroLayered>
 
       {/* 2. LOGO BAR — fond noir (géré en interne par LogoBar) */}
-      <LogoBar label="Ils lui font confiance" />
+      <LogoBar label="Ils m'ont fait confiance" />
 
       {/* 3. STATS — fond noir */}
       <StatsSection />

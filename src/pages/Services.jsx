@@ -76,7 +76,7 @@ export default function Services() {
       </HeroLayered>
 
       {/* ── LOGO BAR ─────────────────────────────────────────────────────── */}
-      <LogoBar label="ILS LUI FONT CONFIANCE" />
+      <LogoBar label="ILS M'ONT FAIT CONFIANCE" />
 
       {/* ── GRILLE SERVICES ──────────────────────────────────────────────── */}
       <section className="py-20 md:py-28" style={{ backgroundColor: COLORS.charcoal }}>
